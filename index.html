@@ -8,14 +8,21 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400|Glegoo:400,700|Droid+Sans:400,700|Quicksand|Josefin+Sans:100,300,400|Life+Savers:400,700|Source+Code+Pro:200,300,400,700,900|Open+Sans:400,300|Roboto+Slab:400,300|Merriweather+Sans:400,300|Gruppo|Roboto:400,900|Raleway:400,700|Montserrat:400,700|Oxygen:400,700,300|Maven+Pro:400,900|Orbitron:400,900|Sancreek' rel='stylesheet' type='text/css'>
+
   </head>
   <body>
     <section class="page-header">
-      <h1 class="project-name">Automation Toolchain</h1>
-      <h2 class="project-tagline">Git + GitHub</h2>
+        <img src="images/target-white.png" style="width: 250px; height: auto;">
+      <h1 class="project-name">Git + <i class="fa fa-github"></i> GitHub</h1>
+      <h2 class="project-tagline">Chef & Automation Toolchain</h2>
       <!--<a href="https://github.com/northDacoder/git-github" class="btn">View on GitHub</a>
       <a href="https://github.com/northDacoder/git-github/zipball/master" class="btn">Download .zip</a>
       <a href="https://github.com/northDacoder/git-github/tarball/master" class="btn">Download .tar.gz</a>-->
+      <a href="../github-git-cheat-sheet.pdf" class="btn"><i class="fa fa-github"></i> GitHub cheat sheet </a>
+      <a href="http://cli.learncodethehardway.org/book/" class="btn">comman-line crash course</a>
+
     </section>
 
     <section class="main-content">
@@ -61,15 +68,15 @@
 <h2>
 <a id="other-benefits" class="anchor" href="#other-benefits" aria-hidden="true"><span class="octicon octicon-link"></span></a>Other benefits</h2>
 
-<ul>
-<li>Write messages to your future self</li>
-<li>Maintain your own preferred frequency of commits &amp; work flow</li>
-<li>If you make a mistake, you can always revert back to a stable point in the git history </li>
-<li>If you decide to add collaborators to your project, catching them up will be an easy transition </li>
-<li>A complete history of all the changes made</li>
-<li>Complete documentation history of why changes were made </li>
-<li>Ability to <code>checkout</code> a snapshot of a previous point in time (in an isolated environment) &amp; inspect the code</li>
-<li>Multiple History Streams</li>
+<ul style="list-style-type: none;">
+<li><i class="fa fa-check"></i> Write messages to your future self</li>
+<li><i class="fa fa-check"></i> Maintain your own preferred frequency of commits &amp; work flow</li>
+<li><i class="fa fa-check"></i> If you make a mistake, you can always revert back to a stable point in the git history </li>
+<li><i class="fa fa-check"></i> If you decide to add collaborators to your project, catching them up will be an easy transition </li>
+<li><i class="fa fa-check"></i> A complete history of all the changes made</li>
+<li><i class="fa fa-check"></i> Complete documentation history of why changes were made </li>
+<li><i class="fa fa-check"></i> Ability to <code>checkout</code> a snapshot of a previous point in time (in an isolated environment) &amp; inspect the code</li>
+<li><i class="fa fa-check"></i> Multiple History Streams</li>
 </ul>
 
 <h2>
@@ -83,7 +90,7 @@
 <p>You can create different branches of history to experiment with different changes to your content or to build out different features independently.  You can then merge those back into the main project history (the master branch) once they're done, or delete them if they end up not working out.</p>
 
 <h1>
-<a id="team-benefits" class="anchor" href="#team-benefits" aria-hidden="true"><span class="octicon octicon-link"></span></a>Team Benefits</h1>
+<a id="team-benefits" class="anchor" href="#team-benefits" aria-hidden="true"><span class="octicon octicon-link"></span></a><i class="fa fa-group"></i> Team Benefits</h1>
 
 <h2>
 <a id="ability-to-resolve-conflicts" class="anchor" href="#ability-to-resolve-conflicts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ability to resolve conflicts</h2>
@@ -97,9 +104,9 @@
 
 <p>Want to learn more about GitHub Teams? Check out this great resource:</p>
 
-<p><a href="https://help.github.com/enterprise/11.10.340/admin/articles/adding-users-and-teams/">GitHub Enterprise Teams</a></p>
+<p><a href="https://help.github.com/enterprise/11.10.340/admin/articles/adding-users-and-teams/"><i class="fa fa-github"></i> GitHub Enterprise Teams</a></p>
 
-<hr> 
+<hr>
 
 <h1>
 <a id="git-command-line" class="anchor" href="#git-command-line" aria-hidden="true"><span class="octicon octicon-link"></span></a>git command-line</h1>
@@ -107,7 +114,7 @@
 <h2>
 <a id="installing-git" class="anchor" href="#installing-git" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing git</h2>
 
-<p>If you don't have git installed yet, you can download the latest version <a href="http://git-scm.com/">here</a></p>
+<p>If you don't have git installed yet, you can download the latest version <a href="http://git-scm.com/"><i class="fa fa-download"></i> here</a></p>
 
 <p>After you have downloaded &amp; installed git on your system, open up the terminal &amp; type in the following command:</p>
 
@@ -145,7 +152,7 @@
 
 <p>To check if you have an existing user:</p>
 
-<pre><code>$ git config --global user.name 
+<pre><code>$ git config --global user.name
 </code></pre>
 
 <p>If you don't have an existing user, create one now by running the same command along with the name of the user you want to create</p>
@@ -155,7 +162,7 @@
 
 <p>Next, let's check if we have an email associated with this user:</p>
 
-<pre><code>$ git config --global user.email 
+<pre><code>$ git config --global user.email
 </code></pre>
 
 <p>If there is no email address returned, go assign one now. </p>
@@ -168,12 +175,12 @@
 
 <p>To see all of your current git config settings for the logged in user:</p>
 
-<pre><code>$ git config --global --list 
+<pre><code>$ git config --global --list
 </code></pre>
 
 <p>To see your system wide git config settings:</p>
 
-<pre><code>$ git config --list 
+<pre><code>$ git config --list
 </code></pre>
 
 <h3>
@@ -185,7 +192,7 @@
 $ git config --global
 $ git config --user
 $ git config --global --list
-$ git config --list 
+$ git config --list
 $ git config --global color.ui true
 $ git config --global color.branch
 $ git config --global color.diff
@@ -199,7 +206,7 @@ $ git config --settings</p>
 
 <pre><code>$ git config --global color.ui true
 $ git config --global color.branch
-$ git config --global color.diff "blue black bold" 
+$ git config --global color.diff "blue black bold"
 $ git config --global color.interactive
 $ git config --global color.status
 $ git config --global core.autocrlf
@@ -208,7 +215,7 @@ $ git log
 
 <hr>
 
-<hr> 
+<hr>
 
 <h1>
 <a id="typical-workflow" class="anchor" href="#typical-workflow" aria-hidden="true"><span class="octicon octicon-link"></span></a>Typical workflow</h1>
@@ -223,13 +230,13 @@ Let's say that we have just created new ìndex.html<code>page &amp;</code>README
 
 <p>We can use the <code>git add</code> command along with the name of the files we want to add.  In this case we would run the command:</p>
 
-<pre><code>$ git add index.html 
-$ git add README.md 
+<pre><code>$ git add index.html
+$ git add README.md
 </code></pre>
 
 <p>Or to add all the files in your current directory (index.html + README.md), we can just run</p>
 
-<pre><code>$ git add * 
+<pre><code>$ git add *
 </code></pre>
 
 <h2>
@@ -237,9 +244,9 @@ $ git add README.md
 
 <p>Now that we have added files to the staging area, we can see what has been modified and staged since our last commit was made by running the <code>git status</code> command</p>
 
-<pre><code>$ git status 
+<pre><code>$ git status
 A index.html
-A README.md  
+A README.md
 </code></pre>
 
 <h2>
@@ -264,7 +271,7 @@ A README.md
 <p>alias - name of the remote repository you want to send changes to
 branch - name of the branch that you want to create (if not already created) on the remote repository </p>
 
-<pre><code>$ git push [alias] [branch] 
+<pre><code>$ git push [alias] [branch]
 </code></pre>
 
 <p>Common defaults:
@@ -273,7 +280,7 @@ branch - master </p>
 
 <p>If you are still working on the master branch &amp; haven't changed any of the default alias settings you would run the command:</p>
 
-<pre><code>$ git push origin master 
+<pre><code>$ git push origin master
 </code></pre>
 
 <h1>
@@ -298,8 +305,10 @@ branch - master </p>
 
 <p>To clone an existing empty repo from github.com using SSH:</p>
 
-<p>Copy the ssh endpoint
-<img src="images/git-clone-empty-ssh.png"></p>
+<p>Copy the ssh endpoint</p>
+<img src="images/git-clone-empty-ssh.png">
+
+<p>& run the command in your terminal:</p>
 
 <pre><code>git clone git@git.target.com:chef-training/git-clone-empty.git
 </code></pre>
@@ -309,8 +318,9 @@ branch - master </p>
 
 <p>You can also clone repo's from github using https, but you will need to provide your username &amp; password each time you want to commit changes back up to the github remote.</p>
 
-<p>Copy the https endpoint
-<img src="images/git-clone-empty-https.png"></p>
+<p>Copy the https endpoint</p>
+
+<img src="images/git-clone-empty-https.png">
 
 <pre><code>git clone https://git.target.com/chef-training/git-clone-empty.git
 </code></pre>
@@ -320,7 +330,7 @@ branch - master </p>
 
 <p>To clone an existing repo from github.com, go to the main project page &amp; find the clone options located on the right side of the screen</p>
 
-<p><img src="images/git-clone-existing-ssh.png"></p>
+<p style="text-align: center;"><img src="images/git-clone-existing-ssh.png" style="width: 250px; height: auto;"></p>
 
 <h2>
 <a id="clone-existing-repo-1" class="anchor" href="#clone-existing-repo-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Clone Existing Repo</h2>
@@ -424,12 +434,10 @@ NEW-REMOTE-URL - The new URL you want to assign to this remote</p>
 <img src="images/git-create-local-repo-mkdir.png"></p>
 
 <p>commands:
-<code>cd</code> "change directory" 
+<code>cd</code> "change directory"
 <code>mkdir</code> "make directory"</p>
 
-<blockquote>
-<p>New to the command line? <br> Checkout this great <a href="http://cli.learncodethehardway.org/book/">crash course</a> on getting started!</p>
-</blockquote>
+<p><strong>New to the command line?</strong> <br> Checkout this great <a href="http://cli.learncodethehardway.org/book/">command-line crash course <i class="fa fa-rocket"></i></a> on getting started!</p>
 
 <h2>
 <a id="git-init" class="anchor" href="#git-init" aria-hidden="true"><span class="octicon octicon-link"></span></a>Git Init</h2>
@@ -447,8 +455,7 @@ NEW-REMOTE-URL - The new URL you want to assign to this remote</p>
 
 <p>Instead, git provides you access to different configurations through their command-line tools.</p>
 
-<p><br>
-<a href="../github-git-cheat-sheet.pdf">git command-line cheat sheet <i></i></a></p>
+<p><a href="../github-git-cheat-sheet.pdf"><i class="fa fa-github"></i> git command-line cheat sheet <i></i></a></p>
 
 <p>Although we don't need to go into the .git folder, we should check to make sure that its there &amp; that git has been properly initialized.</p>
 
@@ -724,9 +731,9 @@ Most companies require that one or two people other than the primary author of t
 
 <p>or</p>
 
-<pre><code>$ mkdir &lt;NEW-REPO-NAME&gt; 
+<pre><code>$ mkdir &lt;NEW-REPO-NAME&gt;
 $ cd &lt;NEW-REPO-NAME&gt;
-$ git init 
+$ git init
 </code></pre>
 
 <h2>
@@ -921,18 +928,10 @@ mkdir - "make directory"</p>
 
 <p><img src="images/git-create-local-repo-ls.png"></p>
 
-<blockquote>
-<code>ls</code> is the command for "list" all files.  If we add <strong>-al</strong>, it will "list" "all" file in the current directory (+ hidden)</blockquote>
-
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/northDacoder/git-github">Git-GitHub</a> is maintained by <a href="https://github.com/northDacoder">northDacoder</a>.</span>
-
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
+<code>ls</code> is the command for "list" all files.  If we add <strong>-al</strong>, it will "list" "all" file in the current directory (+ hidden)
 
     </section>
 
-  
+
   </body>
 </html>
-
