@@ -101,33 +101,88 @@
 <h1>
 <a id="git-command-line" class="anchor" href="#git-command-line" aria-hidden="true"><span class="octicon octicon-link"></span></a>git command-line</h1>
 
-<ul>
-<li>[ ] Installing git 
-If you don't have git installed yet, you can download the latest version (here)[<a href="http://git-scm.com/">http://git-scm.com/</a>]</li>
-</ul>
+<h2>
+<a id="installing-git" class="anchor" href="#installing-git" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing git</h2>
+
+<p>If you don't have git installed yet, you can download the latest version (here)[<a href="http://git-scm.com/">http://git-scm.com/</a>]</p>
 
 <p>After you have downloaded &amp; installed git on your system, open up the terminal &amp; type in the following command:</p>
 
 <p><code>
-git --version
+$ git --version
 </code>   </p>
 
 <p>It should return something like this:</p>
 
 <p><code>
-git version 2.2.1
+$ git version 2.2.1
 </code></p>
 
 <p>You can also see the path of your git installation by typing:</p>
 
 <p><code>
-which git
+$ which git
 </code></p>
 
 <p>It should return something like the example below</p>
 
 <p><code>
 /usr/local/bin/git
+</code></p>
+
+<h2>
+<a id="git-config" class="anchor" href="#git-config" aria-hidden="true"><span class="octicon octicon-link"></span></a>git config</h2>
+
+<p>Now that you have git installed, we will need to configure your git user settings.  When you initialize git to start tracking file changes, a hidden subdirectory named .git will be created at the root of your project.  This is where git stores all the version history, user configuration settings, etc. </p>
+
+<p>Luckily, git provides an amazing command-line tool that allows us to edit any configuration settings right from the command-line.  This saves us from having to dig around hidden .git directories trying to manually make changes to our configuration settings. </p>
+
+<p>Ok, now let's setup our git configuration settings for our local user.  </p>
+
+<h2>
+<a id="git-config-mandatory" class="anchor" href="#git-config-mandatory" aria-hidden="true"><span class="octicon octicon-link"></span></a>git config (mandatory)</h2>
+
+<p>To check if you have an existing user:</p>
+
+<p><code>
+$ git config --global user.name 
+</code></p>
+
+<p>If you don't have an existing user, create one now by running the same command along with the name of the user you want to create</p>
+
+<p><code>
+$ git config --global user.name "John Ryan"
+</code></p>
+
+<p>Next, let's check if we have an email associated with this user:</p>
+
+<p><code>
+$ git config --global user.email 
+</code></p>
+
+<p>If there is no email address returned, go assign one now. </p>
+
+<p><code>
+$ git config --global user.email "your.name@domain.com"
+</code></p>
+
+<h2>
+<a id="git-config--optional" class="anchor" href="#git-config--optional" aria-hidden="true"><span class="octicon octicon-link"></span></a>git config (+ optional)</h2>
+
+<p>To see all of your current git config settings for the logged in user:</p>
+
+<p><code>
+$ git config --global --list 
+</code></p>
+
+<p>To see your system wide git config settings:</p>
+
+<p><code>
+$ git config --list 
+</code></p>
+
+<p><code>
+$ git config --global user.email 
 </code></p>
 
 <h1>
@@ -141,55 +196,6 @@ $ git config --global color.branch
 $ git config --global color.diff
 $ git config --global color.interactive
 $ git config --global color.status
-</code></pre>
-
-<h2>
-<a id="git-config" class="anchor" href="#git-config" aria-hidden="true"><span class="octicon octicon-link"></span></a>git config</h2>
-
-<p>The git config allows you to configure git right from the command-line.  This saves you from having to dig through hidden .git subdirectory, which can cause major problems to your git history.  After all, its hidden for a reason!</p>
-
-<h2>
-<a id="local-git-setup" class="anchor" href="#local-git-setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>Local git setup</h2>
-
-<p>Let's setup our local git configuration so we can get started using git</p>
-
-<h2>
-<a id="setting-your-git-user-name" class="anchor" href="#setting-your-git-user-name" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setting your git user name</h2>
-
-<p>To check if we have an existing user setup within our git config object:</p>
-
-<pre><code>git config --global user.name
-</code></pre>
-
-<p>To assign or add a new user to git</p>
-
-<pre><code>git config --global user.name "John Ryan"
-</code></pre>
-
-<h2>
-<a id="setting-your-git-email" class="anchor" href="#setting-your-git-email" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setting your git email</h2>
-
-<p>To check if you have an existing email address setup within our git config object:</p>
-
-<pre><code>git config --global user.email
-</code></pre>
-
-<p>To assign or add a new email address to git</p>
-
-<pre><code>git config --global user.email "John.C.Ryan2@target.com"
-</code></pre>
-
-<h2>
-<a id="git-config-settings" class="anchor" href="#git-config-settings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Git config settings</h2>
-
-<p>To see all of your current git config settings for the logged in user:</p>
-
-<pre><code>git config --global --list
-</code></pre>
-
-<p>To see your system wide git config settings:</p>
-
-<pre><code>git config --list
 </code></pre>
 
 <h1>
@@ -394,28 +400,20 @@ mkdir - "make directory"</p>
 <blockquote>
 <code>ls</code> is the command for "list" all files.  If we add <strong>-al</strong>, it will "list" "all" file in the current directory (+ hidden)</blockquote>
 
-<h2></h2>
-
 <h1>
 <a id="github" class="anchor" href="#github" aria-hidden="true"><span class="octicon octicon-link"></span></a>GitHub</h1>
 
 <p>In it's simplest form, GitHub is a website that allows you to upload a copy of your local Git repository</p>
-
-<h2></h2>
 
 <h1>
 <a id="githubs-origin" class="anchor" href="#githubs-origin" aria-hidden="true"><span class="octicon octicon-link"></span></a>GitHub's origin</h1>
 
 <p>GitHub was originally created as a way to make it easier for developers to contribute to open source projects</p>
 
-<h2></h2>
-
 <h3>
 <a id="not-just-for-open-source" class="anchor" href="#not-just-for-open-source" aria-hidden="true"><span class="octicon octicon-link"></span></a>Not just for open-source</h3>
 
 <p>In addition to open-source projects, GitHub is quickly becoming the default platform for software development</p>
-
-<h2></h2>
 
 <h3>
 <a id="source-code-management" class="anchor" href="#source-code-management" aria-hidden="true"><span class="octicon octicon-link"></span></a>Source Code Management+</h3>
@@ -424,14 +422,12 @@ mkdir - "make directory"</p>
 
 <p>GitHub provides many additional tools for specifying, discussing, &amp; reviewing software.  </p>
 
-<h2></h2>
+<hr>
 
-<h3>
-<a id="who-can-use-github" class="anchor" href="#who-can-use-github" aria-hidden="true"><span class="octicon octicon-link"></span></a>Who can use GitHub?</h3>
+<h1>
+<a id="who-uses-github" class="anchor" href="#who-uses-github" aria-hidden="true"><span class="octicon octicon-link"></span></a>Who Uses GitHub?</h1>
 
 <p>GitHub is used by software developers all over the world, but is also utilized by many others as well</p>
-
-<h2></h2>
 
 <h3>
 <a id="github-audience" class="anchor" href="#github-audience" aria-hidden="true"><span class="octicon octicon-link"></span></a>GitHub Audience</h3>
@@ -446,59 +442,43 @@ mkdir - "make directory"</p>
 <li>Developers</li>
 </ul>
 
-<h2></h2>
-
 <h3>
 <a id="business-stakeholders" class="anchor" href="#business-stakeholders" aria-hidden="true"><span class="octicon octicon-link"></span></a>Business Stakeholders</h3>
 
 <p>Business stakeholders are able to see how your project is going</p>
-
-<h2></h2>
 
 <h3>
 <a id="product-or-project-managers" class="anchor" href="#product-or-project-managers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Product or Project Managers</h3>
 
 <p>Project managers are able to accurately estimate delivery times &amp; budgeting</p>
 
-<h2></h2>
-
 <h3>
 <a id="designers" class="anchor" href="#designers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Designers</h3>
 
 <p>Designers are able to deliver mockups, photos, html/css, &amp; other graphical assets</p>
-
-<h2></h2>
 
 <h3>
 <a id="copywriter" class="anchor" href="#copywriter" aria-hidden="true"><span class="octicon octicon-link"></span></a>Copywriter</h3>
 
 <p>Copywriters are able to contribute marketing copy or other valuable content to an application while still in the development phase</p>
 
-<h2></h2>
-
 <h3>
 <a id="lawyers" class="anchor" href="#lawyers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lawyers</h3>
 
 <p>Lawyers are able to review the legal implications of any projects &amp; are able to contribute terms and conditions documentation or any software's privacy policy</p>
-
-<h2></h2>
 
 <h3>
 <a id="team-member" class="anchor" href="#team-member" aria-hidden="true"><span class="octicon octicon-link"></span></a>Team Member</h3>
 
 <p>Any team member who needs to review any code or content, or needs to contribute to a project</p>
 
-<h2></h2>
-
 <h3>
 <a id="developer" class="anchor" href="#developer" aria-hidden="true"><span class="octicon octicon-link"></span></a>Developer</h3>
 
 <p>Developers are able to contribute to projects with team members they sit right next to or with team members located thousands of miles away, anywhere in the world. (anywhere with internet that is!)</p>
 
-<h2></h2>
-
-<h3>
-<a id="collaboration-around-communication" class="anchor" href="#collaboration-around-communication" aria-hidden="true"><span class="octicon octicon-link"></span></a>Collaboration around communication</h3>
+<h2>
+<a id="collaboration-around-communication" class="anchor" href="#collaboration-around-communication" aria-hidden="true"><span class="octicon octicon-link"></span></a>Collaboration around communication</h2>
 
 <p>GitHub's web interface allows you to utilize the following features:</p>
 
@@ -509,8 +489,6 @@ mkdir - "make directory"</p>
 <li>issues</li>
 <li>wikis</li>
 </ul>
-
-<h2></h2>
 
 <h1>
 <a id="why-use-github" class="anchor" href="#why-use-github" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why use GitHub?</h1>
