@@ -879,8 +879,6 @@ NEW-REMOTE-URL - The new URL you want to assign to this remote</p>
 
 <p>CD is the command for "changing directories"</p>
 
-<h2></h2>
-
 <h2>
 <a id="create-a-new-directory-1" class="anchor" href="#create-a-new-directory-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create a new directory</h2>
 
@@ -925,46 +923,6 @@ mkdir - "make directory"</p>
 
 <blockquote>
 <code>ls</code> is the command for "list" all files.  If we add <strong>-al</strong>, it will "list" "all" file in the current directory (+ hidden)</blockquote>
-
-<h2>
-<a id="advanced-git" class="anchor" href="#advanced-git" aria-hidden="true"><span class="octicon octicon-link"></span></a>Advanced git</h2>
-
-<p>To display the commits that have deleted files  </p>
-
-<pre><code>git config --diff-filter=D --summary
-</code></pre>
-
-<p>To create a new branch with the changes on the current one</p>
-
-<pre><code>git checkout -b my-new-branch-name
-</code></pre>
-
-<p>To reset to a certain commit in history  </p>
-
-<p>If you don't care about any of the local changes oyu have made, you can reset to one commit back by doing a hard reset:</p>
-
-<pre><code>git reset --hard HEAD~1
-</code></pre>
-
-<p>To merge your local changes with another branch</p>
-
-<pre><code>git merge &lt;your-other-branch-name&gt; --no-ff
-</code></pre>
-
-<p>Be sure to add the --no-ff command so you keep the merge history &amp; avoid fast forwarding</p>
-
-<p>To recover a deleted branch</p>
-
-<pre><code>git reflog
-</code></pre>
-
-<p>Then you can grab the SHA1 for the deleted branch.  Copy the SHA1 &amp; run the command:</p>
-
-<p>$ git checkout </p>
-
-<p>To actually recover the branch:</p>
-
-<p>$ git checkout -b </p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/northDacoder/git-github">Git-GitHub</a> is maintained by <a href="https://github.com/northDacoder">northDacoder</a>.</span>
