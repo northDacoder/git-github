@@ -50,82 +50,47 @@
 
 <p>Even if you are independently editing files by yourself, you can still take advantage of all the benefits of a version control system</p>
 
+<h1>
+<a id="individual-benefits" class="anchor" href="#individual-benefits" aria-hidden="true"><span class="octicon octicon-link"></span></a>Individual Benefits</h1>
+
 <h2>
-<a id="individual-benefits" class="anchor" href="#individual-benefits" aria-hidden="true"><span class="octicon octicon-link"></span></a>Individual Benefits</h2>
+<a id="ability-to-undo-changes" class="anchor" href="#ability-to-undo-changes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ability to undo changes</h2>
+
+<p>With git you can always revert back to a previous point in your project history </p>
 
 <ul>
-<li>Ability to undo changes</li>
-<li>Write messages to your confused future self</li>
+<li>Write messages to your future self</li>
 <li>Maintain your own preferred frequency of commits &amp; work flow</li>
 <li>If you make a mistake, you can always revert back to a stable point in the git history </li>
-<li>If you ever add collaborators to your project, it will be a very easy transition to get them up to speed on whats been done</li>
-</ul>
-
-<h2>
-<a id="individual-benefits-1" class="anchor" href="#individual-benefits-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Individual Benefits</h2>
-
-<ul>
+<li>If you decide to add collaborators to your project, catching them up will be an easy transition </li>
 <li>A complete history of all the changes made</li>
-</ul>
-
-<blockquote>
-<p>If you ever want to see what your project looked like a day, week, month, or a year ago, you can check out a previous version of the project to see exactly what the state of the files was back then</p>
-</blockquote>
-
-<h2>
-<a id="individual-benefits-2" class="anchor" href="#individual-benefits-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Individual Benefits</h2>
-
-<ul>
-<li>Complete documentation history of why changes were made</li>
-</ul>
-
-<blockquote>
-<p>Often it's hard to remember why a change was made.  With commit messages in Git, it's easy to document for future reference why you're making change</p>
-</blockquote>
-
-<h2>
-<a id="individual-benefits-3" class="anchor" href="#individual-benefits-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Individual Benefits</h2>
-
-<ul>
-<li>The Confidence to change anything</li>
-</ul>
-
-<blockquote>
-<p>Because it's easy to recover a previous version of your project, you can have the confidence to make any changes you want.  If they don't work out, you can always get back to an earlier version of your work.</p>
-</blockquote>
-
-<h2>
-<a id="individual-benefits-4" class="anchor" href="#individual-benefits-4" aria-hidden="true"><span class="octicon octicon-link"></span></a>Individual Benefits</h2>
-
-<ul>
+<li>Complete documentation history of why changes were made </li>
+<li>Ability to <code>checkout</code> a snapshot of a previous point in time (in an isolated environment) &amp; inspect the code</li>
 <li>Multiple History Streams</li>
 </ul>
 
-<blockquote>
+<h2>
+<a id="confidence-to-make-changes" class="anchor" href="#confidence-to-make-changes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Confidence to make changes</h2>
+
+<p>Because it's easy to recover a previous version of your project, you can have the confidence to make any changes you want.  If they don't work out, you can always get back to an earlier version of your work.</p>
+
+<h2>
+<a id="isolated-sandbox-environments" class="anchor" href="#isolated-sandbox-environments" aria-hidden="true"><span class="octicon octicon-link"></span></a>Isolated sandbox environments</h2>
+
 <p>You can create different branches of history to experiment with different changes to your content or to build out different features independently.  You can then merge those back into the main project history (the master branch) once they're done, or delete them if they end up not working out.</p>
-</blockquote>
+
+<h1>
+<a id="team-benefits" class="anchor" href="#team-benefits" aria-hidden="true"><span class="octicon octicon-link"></span></a>Team Benefits</h1>
 
 <h2>
-<a id="team-benefits" class="anchor" href="#team-benefits" aria-hidden="true"><span class="octicon octicon-link"></span></a>Team Benefits</h2>
+<a id="ability-to-resolve-conflicts" class="anchor" href="#ability-to-resolve-conflicts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ability to resolve conflicts</h2>
 
-<ul>
-<li>Ability to resolve conflicts</li>
-</ul>
-
-<blockquote>
 <p>With Git, multiple people can work on the same file at the same time.  Usually git will be able to merge the changes automatically.  If it can't, it'll show you what the conflicts are and will make it easy for you to resolve them.</p>
-</blockquote>
 
 <h2>
-<a id="team-benefits-1" class="anchor" href="#team-benefits-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Team Benefits</h2>
+<a id="independent-history-streams" class="anchor" href="#independent-history-streams" aria-hidden="true"><span class="octicon octicon-link"></span></a>Independent History Streams</h2>
 
-<ul>
-<li>Independent History Streams</li>
-</ul>
-
-<blockquote>
 <p>Different people on the project can work on different branches, allowing you to work on separate features independently and then merge the features when they're done.</p>
-</blockquote>
 
 <h1>
 <a id="customizing-git" class="anchor" href="#customizing-git" aria-hidden="true"><span class="octicon octicon-link"></span></a>Customizing Git</h1>
@@ -139,46 +104,6 @@ $ git config --global color.diff
 $ git config --global color.interactive
 $ git config --global color.status
 </code></pre>
-
-<h2>
-<a id="advanced-git" class="anchor" href="#advanced-git" aria-hidden="true"><span class="octicon octicon-link"></span></a>Advanced git</h2>
-
-<p>To display the commits that have deleted files  </p>
-
-<pre><code>git config --diff-filter=D --summary
-</code></pre>
-
-<p>To create a new branch with the changes on the current one</p>
-
-<pre><code>git checkout -b my-new-branch-name
-</code></pre>
-
-<p>To reset to a certain commit in history  </p>
-
-<p>If you don't care about any of the local changes oyu have made, you can reset to one commit back by doing a hard reset:</p>
-
-<pre><code>git reset --hard HEAD~1
-</code></pre>
-
-<p>To merge your local changes with another branch</p>
-
-<pre><code>git merge &lt;your-other-branch-name&gt; --no-ff
-</code></pre>
-
-<p>Be sure to add the --no-ff command so you keep the merge history &amp; avoid fast forwarding</p>
-
-<p>To recover a deleted branch</p>
-
-<pre><code>git reflog
-</code></pre>
-
-<p>Then you can grab the SHA1 for the deleted branch.  Copy the SHA1 &amp; run the command:</p>
-
-<p>$ git checkout </p>
-
-<p>To actually recover the branch:</p>
-
-<p>$ git checkout -b </p>
 
 <h1>
 <a id="the-git-command-line" class="anchor" href="#the-git-command-line" aria-hidden="true"><span class="octicon octicon-link"></span></a>The git command-line</h1>
@@ -955,8 +880,6 @@ mkdir - "make directory"</p>
 
 <p>note: This course goes through the commands for navigating in &amp; out of directories, creating new files, deleting files, etc.</p>
 
-<h2></h2>
-
 <h2>
 <a id="git-init-1" class="anchor" href="#git-init-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Git Init</h2>
 
@@ -966,8 +889,6 @@ mkdir - "make directory"</p>
 
 <p><img src="images/git-create-local-repo-init.png"></p>
 
-<h2></h2>
-
 <h2>
 <a id="about-git-init-1" class="anchor" href="#about-git-init-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>About git init</h2>
 
@@ -975,14 +896,9 @@ mkdir - "make directory"</p>
 
 <p>Instead, git provides you access to different configurations through their command-line tools.</p>
 
-<p><br>
-<a href="../github-git-cheat-sheet.pdf">git command-line cheat sheet <i></i></a></p>
-
-<h2></h2>
+<p><a href="../github-git-cheat-sheet.pdf">git command-line cheat sheet <i></i></a></p>
 
 <p>Although we don't need to go into the .git folder, we should check to make sure that its there &amp; that git has been properly initialized.</p>
-
-<h2></h2>
 
 <p>To check that you have properly initialized git for this directory, type in the command ls -la:</p>
 
@@ -995,7 +911,45 @@ mkdir - "make directory"</p>
 <blockquote>
 <code>ls</code> is the command for "list" all files.  If we add <strong>-al</strong>, it will "list" "all" file in the current directory (+ hidden)</blockquote>
 
-<h2></h2>
+<h2>
+<a id="advanced-git" class="anchor" href="#advanced-git" aria-hidden="true"><span class="octicon octicon-link"></span></a>Advanced git</h2>
+
+<p>To display the commits that have deleted files  </p>
+
+<pre><code>git config --diff-filter=D --summary
+</code></pre>
+
+<p>To create a new branch with the changes on the current one</p>
+
+<pre><code>git checkout -b my-new-branch-name
+</code></pre>
+
+<p>To reset to a certain commit in history  </p>
+
+<p>If you don't care about any of the local changes oyu have made, you can reset to one commit back by doing a hard reset:</p>
+
+<pre><code>git reset --hard HEAD~1
+</code></pre>
+
+<p>To merge your local changes with another branch</p>
+
+<pre><code>git merge &lt;your-other-branch-name&gt; --no-ff
+</code></pre>
+
+<p>Be sure to add the --no-ff command so you keep the merge history &amp; avoid fast forwarding</p>
+
+<p>To recover a deleted branch</p>
+
+<pre><code>git reflog
+</code></pre>
+
+<p>Then you can grab the SHA1 for the deleted branch.  Copy the SHA1 &amp; run the command:</p>
+
+<p>$ git checkout </p>
+
+<p>To actually recover the branch:</p>
+
+<p>$ git checkout -b </p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/northDacoder/git-github">Git-GitHub</a> is maintained by <a href="https://github.com/northDacoder">northDacoder</a>.</span>
