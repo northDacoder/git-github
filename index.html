@@ -219,14 +219,15 @@ $ git log
 <p>'git add' is the command to move changes in your current working directory to the staging area.  </p>
 
 <p>Example:
-Let's say that we have just created new àbout.html` page &amp; want to add it to the staging area for our next commit.</p>
+Let's say that we have just created new ìndex.html<code>page &amp;</code>README.md` &amp; want to add them to the staging area for our next commit.</p>
 
 <p>We can use the <code>git add</code> command along with the name of the files we want to add.  In this case we would run the command:</p>
 
-<pre><code>$ git add about.html 
+<pre><code>$ git add index.html 
+$ git add README.md 
 </code></pre>
 
-<p>If you want to add all the files in your current directory</p>
+<p>Or to add all the files in your current directory (index.html + README.md), we can just run</p>
 
 <pre><code>$ git add * 
 </code></pre>
@@ -237,7 +238,8 @@ Let's say that we have just created new àbout.html` page &amp; want to add it t
 <p>Now that we have added files to the staging area, we can see what has been modified and staged since our last commit was made by running the <code>git status</code> command</p>
 
 <pre><code>$ git status 
-A about.html 
+A index.html
+A README.md  
 </code></pre>
 
 <h2>
@@ -247,7 +249,7 @@ A about.html
 
 <p>Along with our username &amp; email address associated with these changes, you will want to also include a message that will also be included in this snapshot.  To record your snapshot along with a commit message run the following command &amp; provide a message inside quotations.</p>
 
-<pre><code>$ git commit -m "add about.html file"
+<pre><code>$ git commit -m "add index.html &amp; README.md file"
 </code></pre>
 
 <p>If you forget to add the <code>-m</code> along with a message for the commit, git will automatically open the <code>vim</code> editor for you to add a commit message &amp; save before continuing.  </p>
