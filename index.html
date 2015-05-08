@@ -95,6 +95,41 @@
 
 <p>Different people on the project can work on different branches, allowing you to work on separate features independently and then merge the features when they're done.</p>
 
+<p>Want to learn more about GitHub Teams? Check out this great resource:
+(GitHub Enterprise Teams)[<a href="https://help.github.com/enterprise/11.10.340/admin/articles/adding-users-and-teams/">https://help.github.com/enterprise/11.10.340/admin/articles/adding-users-and-teams/</a>]</p>
+
+<h1>
+<a id="git-command-line" class="anchor" href="#git-command-line" aria-hidden="true"><span class="octicon octicon-link"></span></a>git command-line</h1>
+
+<h2>
+<a id="installing-git" class="anchor" href="#installing-git" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing git</h2>
+
+<p>If you don't have git installed yet, you can download the latest version (here)[<a href="http://git-scm.com/">http://git-scm.com/</a>]</p>
+
+<p>After you have downloaded &amp; installed git on your system, open up the terminal &amp; type in the following command:</p>
+
+<p><code>
+git --version
+</code>   </p>
+
+<p>It should return something like this:</p>
+
+<p><code>
+git version 2.2.1
+</code></p>
+
+<p>You can also see the path of your git installation by typing:</p>
+
+<p><code>
+which git
+</code></p>
+
+<p>It should return something like the example below</p>
+
+<p><code>
+/usr/local/bin/git
+</code></p>
+
 <h1>
 <a id="customizing-git" class="anchor" href="#customizing-git" aria-hidden="true"><span class="octicon octicon-link"></span></a>Customizing Git</h1>
 
@@ -108,40 +143,10 @@ $ git config --global color.interactive
 $ git config --global color.status
 </code></pre>
 
-<h1>
-<a id="the-git-command-line" class="anchor" href="#the-git-command-line" aria-hidden="true"><span class="octicon octicon-link"></span></a>The git command-line</h1>
-
 <h2>
 <a id="git-config" class="anchor" href="#git-config" aria-hidden="true"><span class="octicon octicon-link"></span></a>git config</h2>
 
 <p>The git config allows you to configure git right from the command-line.  This saves you from having to dig through hidden .git subdirectory, which can cause major problems to your git history.  After all, its hidden for a reason!</p>
-
-<p>Before we can started using git, we need to make sure we have the proper settings right from the start.</p>
-
-<h2>
-<a id="git---version" class="anchor" href="#git---version" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>git --version</code>
-</h2>
-
-<p>First, let's check that we have git properly installed on our system.  To check which version of git we currently have installed on our system:</p>
-
-<pre><code>git --version
-git version 2.2.1
-git version
-git version 2.2.1
-</code></pre>
-
-<h2>
-<a id="which-git" class="anchor" href="#which-git" aria-hidden="true"><span class="octicon octicon-link"></span></a>which git</h2>
-
-<p>To find the path for your current git installation:</p>
-
-<pre><code>which git
-</code></pre>
-
-<p>Should return something similar depending on if you are on a Mac or a Windows machine</p>
-
-<pre><code>/usr/local/bin/git
-</code></pre>
 
 <h2>
 <a id="local-git-setup" class="anchor" href="#local-git-setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>Local git setup</h2>
