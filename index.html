@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Git-GitHub by northDacoder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Git-GitHub</h1>
+      <h2 class="project-tagline"></h2>
+      <a href="https://github.com/northDacoder/git-github" class="btn">View on GitHub</a>
+      <a href="https://github.com/northDacoder/git-github/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/northDacoder/git-github/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h3>
+<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+
+<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+
+<pre><code>$ cd your_repo_root/repo_name
+$ git fetch origin
+$ git checkout gh-pages
+</code></pre>
+
+<h2>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting Started</h2>
+
+<p>To get started using git we need to:</p>
+
+<pre><code>$ git clone &lt;github.com/SOME-REPO&gt;
+</code></pre>
+
+<p>or</p>
+
+<pre><code>$ mkdir &lt;NEW-REPO-NAME&gt; 
+$ cd &lt;NEW-REPO-NAME&gt;
+$ git init 
+</code></pre>
+
+<h2>
+<a id="clone-existing-repo-using-ssh" class="anchor" href="#clone-existing-repo-using-ssh" aria-hidden="true"><span class="octicon octicon-link"></span></a>Clone Existing Repo Using SSH</h2>
+
+<p>To clone an existing empty repo from github.com using SSH:</p>
+
+<p>Copy the ssh endpoint
+<img src="images/git-clone-empty-ssh.png"></p>
+
+<pre><code>git clone git@git.target.com:chef-training/git-clone-empty.git
+</code></pre>
+
+<h2></h2>
+
+<h2>
+<a id="clone-existing-repo-using-https" class="anchor" href="#clone-existing-repo-using-https" aria-hidden="true"><span class="octicon octicon-link"></span></a>Clone Existing Repo Using HTTPS</h2>
+
+<p>You can also clone repo's from github using https, but you will need to provide your username &amp; password each time you want to commit changes back up to the github remote.</p>
+
+<p>Copy the https endpoint
+<img src="images/git-clone-empty-https.png"></p>
+
+<pre><code>git clone https://git.target.com/chef-training/git-clone-empty.git
+</code></pre>
+
+<h2></h2>
+
+<h2>
+<a id="clone-existing-repo" class="anchor" href="#clone-existing-repo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Clone Existing Repo</h2>
+
+<p>To clone an existing repo from github.com, go to the main project page &amp; find the clone options located on the right side of the screen</p>
+
+<p><img src="images/git-clone-existing-ssh.png"></p>
+
+<h2></h2>
+
+<h2>
+<a id="clone-existing-repo-1" class="anchor" href="#clone-existing-repo-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Clone Existing Repo</h2>
+
+<p>Copy the ssh url &amp; type the following command into the terminal</p>
+
+<pre><code>git clone git@git.target.com:chef-training/git-clone-existing.git
+</code></pre>
+
+<h2></h2>
+
+<h2>
+<a id="whats-happening" class="anchor" href="#whats-happening" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's happening</h2>
+
+<p>Here's whats happening when we read the log messaages from the terminal</p>
+
+<p><img src="images/git-clone-existing-terminal.png"></p>
+
+<p>It should say that it has received 100% of the objects</p>
+
+<h2></h2>
+
+<h2>
+<a id="change-directories" class="anchor" href="#change-directories" aria-hidden="true"><span class="octicon octicon-link"></span></a>Change directories</h2>
+
+<p>Now that we have successfully cloned this repo to our desktop, we still need to change directories (cd) so that we are in the project.</p>
+
+<p><img src="images/git-clone-existing-cd.png"></p>
+
+<h2></h2>
+
+<h2>
+<a id="list-all-the-files" class="anchor" href="#list-all-the-files" aria-hidden="true"><span class="octicon octicon-link"></span></a>List all the files</h2>
+
+<p>Now when you type ls into the terminal you should see the README.md file &amp; the index.html file</p>
+
+<p><img src="images/git-clone-existing-ls.png"></p>
+
+<p>If you type ls -la to also show hidden files you should see the hidden .git directory as well</p>
+
+<p><img src="images/git-clone-existing-lsla.png"></p>
+
+<h2></h2>
+
+<h2>
+<a id="remote-endpoints" class="anchor" href="#remote-endpoints" aria-hidden="true"><span class="octicon octicon-link"></span></a>Remote Endpoints</h2>
+
+<p>When cloning an existing repo from github, you will already have an origin remote set for you to start making pull requests.</p>
+
+<h2></h2>
+
+<h2>
+<a id="check-existing-remotes" class="anchor" href="#check-existing-remotes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Check Existing Remotes</h2>
+
+<p>To see existing remotes set for any git repo type the following command:  </p>
+
+<p><img src="images/git-clone-existing-remote.png"></p>
+
+<h2></h2>
+
+<h2>
+<a id="remove-a-remote" class="anchor" href="#remove-a-remote" aria-hidden="true"><span class="octicon octicon-link"></span></a>Remove a Remote</h2>
+
+<p>To remove a remote you can type git remote remove REMOTE-NAME, where REMOTE-NAME is the name of the remote you want to remove.  The default remote from a cloned repo will have a name of origin.  </p>
+
+<p><img src="images/git-clone-existing-remote-remove.png"></p>
+
+<h2></h2>
+
+<h2>
+<a id="add-a-remote" class="anchor" href="#add-a-remote" aria-hidden="true"><span class="octicon octicon-link"></span></a>Add a Remote</h2>
+
+<p>To add a remote you can run the command:</p>
+
+<pre><code>git remote add REMOTE-NAME REMOTE-URL,
+</code></pre>
+
+<p>where REMOTE-NAME is the name of the remote you would like to add &amp; REMOTE-URL is the endpoint that the remote will point to on GitHub.  This could be origin, github, heroku, aws, docker, openstack, etc.</p>
+
+<p><img src="images/git-clone-existing-remote-add.png"></p>
+
+<h2></h2>
+
+<h2>
+<a id="change-a-remote" class="anchor" href="#change-a-remote" aria-hidden="true"><span class="octicon octicon-link"></span></a>Change a Remote</h2>
+
+<p>To change the URL of an existing remote, run the command:</p>
+
+<pre><code>git remote set-url REMOTE-NAME NEW-REMOTE-URL
+</code></pre>
+
+<p>REMOTE-NAME - The name of the remote, whose endpoint you want to change
+NEW-REMOTE-URL - The new URL you want to assign to this remote</p>
+
+<p><br></p>
+
+<p><img src="images/git-clone-existing-remote-seturl.png"></p>
+
+<h2></h2>
+
+<h2>
+<a id="setting-up-a-repository-locally" class="anchor" href="#setting-up-a-repository-locally" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setting up a Repository (Locally)</h2>
+
+<p>Now we will go through setting up a new git repository from scratch.</p>
+
+<h2></h2>
+
+<h2>
+<a id="create-empty-directory" class="anchor" href="#create-empty-directory" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create Empty Directory</h2>
+
+<p>Change directories to your desktop</p>
+
+<p><img src="images/git-create-local-repo-cd.png"></p>
+
+<p>CD is the command for "changing directories"</p>
+
+<h2></h2>
+
+<h2>
+<a id="create-a-new-directory" class="anchor" href="#create-a-new-directory" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create a new directory</h2>
+
+<p>Create a new directory (mkdir) &amp; change (cd) into your directory
+<img src="images/git-create-local-repo-mkdir.png"></p>
+
+<p>commands:<br>
+cd "change directory" <br>
+mkdir - "make directory"</p>
+
+<blockquote>New to the command line? <br> Checkout this great <a href="http://cli.learncodethehardway.org/book/">crash course</a> on getting started!</blockquote>
+
+<p>note: This course goes through the commands for navigating in &amp; out of directories, creating new files, deleting files, etc.</p>
+
+<h2></h2>
+
+<h2>
+<a id="git-init" class="anchor" href="#git-init" aria-hidden="true"><span class="octicon octicon-link"></span></a>Git Init</h2>
+
+<p>Now that we are inside the directory, we can initialize git within this directory using the git init command</p>
+
+<p><br></p>
+
+<p><img src="images/git-create-local-repo-init.png"></p>
+
+<h2></h2>
+
+<h2>
+<a id="about-git-init" class="anchor" href="#about-git-init" aria-hidden="true"><span class="octicon octicon-link"></span></a>About git init</h2>
+
+<p>The git init command adds a hidden ".git" folder that will track all the file changes, history, etc.  You will not need to make any changes directly to this folder.  </p>
+
+<p>Instead, git provides you access to different configurations through their command-line tools.</p>
+
+<p><br>
+<a href="../github-git-cheat-sheet.pdf">git command-line cheat sheet <i></i></a></p>
+
+<h2></h2>
+
+<p>Although we don't need to go into the .git folder, we should check to make sure that its there &amp; that git has been properly initialized.</p>
+
+<h2></h2>
+
+<p>To check that you have properly initialized git for this directory, type in the command ls -la:</p>
+
+<p><img src="images/git-create-local-repo-lsla.png"></p>
+
+<p>If we only type in ls, we won't be able to see the .git subdirectory since it is hidden from search by default  </p>
+
+<p><img src="images/git-create-local-repo-ls.png"></p>
+
+<blockquote>
+<code>ls</code> is the command for "list" all files.  If we add <strong>-al</strong>, it will "list" "all" file in the current directory (+ hidden)</blockquote>
+
+<h2></h2>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/northDacoder/git-github">Git-GitHub</a> is maintained by <a href="https://github.com/northDacoder">northDacoder</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
+
