@@ -101,6 +101,8 @@
 <h1>
 <a id="git-command-line" class="anchor" href="#git-command-line" aria-hidden="true"><span class="octicon octicon-link"></span></a>git command-line</h1>
 
+<hr>
+
 <h2>
 <a id="installing-git" class="anchor" href="#installing-git" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing git</h2>
 
@@ -108,30 +110,28 @@
 
 <p>After you have downloaded &amp; installed git on your system, open up the terminal &amp; type in the following command:</p>
 
-<p><code>
-$ git --version
-</code>   </p>
+<pre><code>$ git --version
+</code></pre>
 
 <p>It should return something like this:</p>
 
-<p><code>
-$ git version 2.2.1
-</code></p>
+<pre><code>$ git version 2.2.1
+</code></pre>
 
 <p>You can also see the path of your git installation by typing:</p>
 
-<p><code>
-$ which git
-</code></p>
+<pre><code>$ which git
+</code></pre>
 
 <p>It should return something like the example below</p>
 
-<p><code>
-/usr/local/bin/git
-</code></p>
+<pre><code>/usr/local/bin/git
+</code></pre>
 
-<h2>
-<a id="git-config" class="anchor" href="#git-config" aria-hidden="true"><span class="octicon octicon-link"></span></a>git config</h2>
+<hr>
+
+<h1>
+<a id="configuring-git-settings" class="anchor" href="#configuring-git-settings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring git settings</h1>
 
 <p>Now that you have git installed, we will need to configure your git user settings.  When you initialize git to start tracking file changes, a hidden subdirectory named .git will be created at the root of your project.  This is where git stores all the version history, user configuration settings, etc. </p>
 
@@ -144,44 +144,35 @@ $ which git
 
 <p>To check if you have an existing user:</p>
 
-<p><code>
-$ git config --global user.name 
-</code></p>
+<pre><code>$ git config --global user.name 
+</code></pre>
 
 <p>If you don't have an existing user, create one now by running the same command along with the name of the user you want to create</p>
 
-<p><code>
-$ git config --global user.name "John Ryan"
-</code></p>
+<pre><code>$ git config --global user.name "John Ryan"
+</code></pre>
 
 <p>Next, let's check if we have an email associated with this user:</p>
 
-<p><code>
-$ git config --global user.email 
-</code></p>
+<pre><code>$ git config --global user.email 
+</code></pre>
 
 <p>If there is no email address returned, go assign one now. </p>
 
-<p><code>
-$ git config --global user.email "your.name@domain.com"
-</code></p>
+<pre><code>$ git config --global user.email "your.name@domain.com"
+</code></pre>
 
 <h2>
 <a id="git-config--optional" class="anchor" href="#git-config--optional" aria-hidden="true"><span class="octicon octicon-link"></span></a>git config (+ optional)</h2>
 
 <p>To see all of your current git config settings for the logged in user:</p>
 
-<p><code>
-$ git config --global --list 
-</code></p>
+<pre><code>$ git config --global --list 
+</code></pre>
 
 <p>To see your system wide git config settings:</p>
 
-<p><code>
-$ git config --list 
-</code></p>
-
-<pre><code>$ git config --global user.email 
+<pre><code>$ git config --list 
 </code></pre>
 
 <h3>
@@ -196,6 +187,8 @@ $ git config --global color.diff
 $ git config --global color.interactive
 $ git config --global color.status
 </code></pre>
+
+<hr>
 
 <h1>
 <a id="git-add" class="anchor" href="#git-add" aria-hidden="true"><span class="octicon octicon-link"></span></a>git add</h1>
