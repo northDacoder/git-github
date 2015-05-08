@@ -211,14 +211,68 @@ $ git log
 <hr> 
 
 <h1>
-<a id="common-workflow-commands" class="anchor" href="#common-workflow-commands" aria-hidden="true"><span class="octicon octicon-link"></span></a>Common workflow commands</h1>
+<a id="typical-workflow" class="anchor" href="#typical-workflow" aria-hidden="true"><span class="octicon octicon-link"></span></a>Typical workflow</h1>
 
-<h1>
-<a id="git-add" class="anchor" href="#git-add" aria-hidden="true"><span class="octicon octicon-link"></span></a>git add</h1>
+<h2>
+<a id="step-1-git-add" class="anchor" href="#step-1-git-add" aria-hidden="true"><span class="octicon octicon-link"></span></a>STEP 1: git add</h2>
 
-<p>Moves changes in your current working directory to the staging area.  </p>
+<p>'git add' is the command to move changes in your current working directory to the staging area.  </p>
 
-<p>note: The next step will be preparing your snapshot before officially making a commit in the history</p>
+<p>Example:
+Let's say that we have just created new àbout.html` page &amp; want to add it to the staging area for our next commit.</p>
+
+<p>We can use the <code>git add</code> command along with the name of the files we want to add.  In this case we would run the command:</p>
+
+<pre><code>$ git add about.html 
+</code></pre>
+
+<p>If you want to add all the files in your current directory</p>
+
+<pre><code>$ git add * 
+</code></pre>
+
+<h2>
+<a id="step-2-git-status" class="anchor" href="#step-2-git-status" aria-hidden="true"><span class="octicon octicon-link"></span></a>STEP 2: git status</h2>
+
+<p>Now that we have added files to the staging area, we can see what has been modified and staged since our last commit was made by running the <code>git status</code> command</p>
+
+<pre><code>$ git status 
+A about.html 
+</code></pre>
+
+<h2>
+<a id="step-3-git-commit" class="anchor" href="#step-3-git-commit" aria-hidden="true"><span class="octicon octicon-link"></span></a>STEP 3: git commit</h2>
+
+<p>Next we are going to the use the <code>git commit</code> command to record a snapshot of the staging area.  Git records our name &amp; email address from our <code>git config --global user.name</code> &amp; <code>git config --global user.email</code> settings from earlier. </p>
+
+<p>Along with our username &amp; email address associated with these changes, you will want to also include a message that will also be included in this snapshot.  To record your snapshot along with a commit message run the following command &amp; provide a message inside quotations.</p>
+
+<pre><code>$ git commit -m "add about.html file"
+</code></pre>
+
+<p>If you forget to add the <code>-m</code> along with a message for the commit, git will automatically open the <code>vim</code> editor for you to add a commit message &amp; save before continuing.  </p>
+
+<h2>
+<a id="step-4-git-push" class="anchor" href="#step-4-git-push" aria-hidden="true"><span class="octicon octicon-link"></span></a>STEP 4: git push</h2>
+
+<p>Now that we have created a commit, we can use the <code>git push</code> command to push (send) our changes to a remote repository.  </p>
+
+<p>To push our changes to a remote repo, we need to also include:</p>
+
+<p>alias - name of the remote repository you want to send changes to
+branch - name of the branch that you want to create (if not already created) on the remote repository </p>
+
+<pre><code>$ git push [alias] [branch] 
+</code></pre>
+
+<p>Common defaults:
+alias - origin
+branch - master </p>
+
+<p>If you are still working on the master branch &amp; haven't changed any of the default alias settings you would run the command:</p>
+
+<pre><code>$ git push origin master 
+</code></pre>
 
 <h1>
 <a id="git-branch" class="anchor" href="#git-branch" aria-hidden="true"><span class="octicon octicon-link"></span></a>git branch</h1>
