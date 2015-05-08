@@ -107,7 +107,7 @@
 <h2>
 <a id="installing-git" class="anchor" href="#installing-git" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing git</h2>
 
-<p>If you don't have git installed yet, you can download the latest version (here)[<a href="http://git-scm.com/">http://git-scm.com/</a>]</p>
+<p>If you don't have git installed yet, you can download the latest version <a href="http://git-scm.com/">here</a></p>
 
 <p>After you have downloaded &amp; installed git on your system, open up the terminal &amp; type in the following command:</p>
 
@@ -179,17 +179,37 @@
 <h3>
 <a id="customizing-git" class="anchor" href="#customizing-git" aria-hidden="true"><span class="octicon octicon-link"></span></a>Customizing Git</h3>
 
+<p>Checking your settings:</p>
+
 <pre><code>$ git config --settings
 $ git config --global
 $ git config --user
+$ git config --global --list
+$ git config --list 
 $ git config --global color.ui true
 $ git config --global color.branch
 $ git config --global color.diff
 $ git config --global color.interactive
 $ git config --global color.status
+$ git config --global core.autocrlf
 </code></pre>
 
+<p>To change settings you need to pass in variables after the commands above
+$ git config --settings
+    $ git config --global color.ui true
+    $ git config --global color.branch
+    $ git config --global color.diff "blue black bold" 
+    $ git config --global color.interactive
+    $ git config --global color.status
+    $ git config --global core.autocrlf
+    $ git log</p>
+
 <hr>
+
+<hr> 
+
+<h1>
+<a id="common-workflow-commands" class="anchor" href="#common-workflow-commands" aria-hidden="true"><span class="octicon octicon-link"></span></a>Common workflow commands</h1>
 
 <h1>
 <a id="git-add" class="anchor" href="#git-add" aria-hidden="true"><span class="octicon octicon-link"></span></a>git add</h1>
@@ -337,23 +357,21 @@ NEW-REMOTE-URL - The new URL you want to assign to this remote</p>
 
 <p><img src="images/git-create-local-repo-cd.png"></p>
 
-<p>CD is the command for "changing directories"</p>
+<p><code>cd</code> is the command for "changing directories"</p>
 
 <h2>
 <a id="create-a-new-directory" class="anchor" href="#create-a-new-directory" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create a new directory</h2>
 
-<p>Create a new directory (mkdir) &amp; change (cd) into your directory
+<p>Create a new directory (<code>mkdir</code>) &amp; change (<code>cd</code>) into your directory
 <img src="images/git-create-local-repo-mkdir.png"></p>
 
-<p>commands:<br>
-cd "change directory" <br>
-mkdir - "make directory"</p>
+<p>commands:
+<code>cd</code> "change directory" 
+<code>mkdir</code> "make directory"</p>
 
-<blockquote>New to the command line? <br> Checkout this great <a href="http://cli.learncodethehardway.org/book/">crash course</a> on getting started!</blockquote>
-
-<p>note: This course goes through the commands for navigating in &amp; out of directories, creating new files, deleting files, etc.</p>
-
-<h2></h2>
+<blockquote>
+<p>New to the command line? <br> Checkout this great <a href="http://cli.learncodethehardway.org/book/">crash course</a> on getting started!</p>
+</blockquote>
 
 <h2>
 <a id="git-init" class="anchor" href="#git-init" aria-hidden="true"><span class="octicon octicon-link"></span></a>Git Init</h2>
@@ -363,8 +381,6 @@ mkdir - "make directory"</p>
 <p><br></p>
 
 <p><img src="images/git-create-local-repo-init.png"></p>
-
-<h2></h2>
 
 <h2>
 <a id="about-git-init" class="anchor" href="#about-git-init" aria-hidden="true"><span class="octicon octicon-link"></span></a>About git init</h2>
@@ -376,11 +392,7 @@ mkdir - "make directory"</p>
 <p><br>
 <a href="../github-git-cheat-sheet.pdf">git command-line cheat sheet <i></i></a></p>
 
-<h2></h2>
-
 <p>Although we don't need to go into the .git folder, we should check to make sure that its there &amp; that git has been properly initialized.</p>
-
-<h2></h2>
 
 <p>To check that you have properly initialized git for this directory, type in the command ls -la:</p>
 
@@ -507,8 +519,6 @@ mkdir - "make directory"</p>
 <p>Commit
 Whenever you save your changes to one or more files to history in Git, you create a new commit.</p>
 
-<h2></h2>
-
 <h3>
 <a id="commit-message" class="anchor" href="#commit-message" aria-hidden="true"><span class="octicon octicon-link"></span></a>Commit Message</h3>
 
@@ -516,15 +526,11 @@ Whenever you save your changes to one or more files to history in Git, you creat
 
 <p>Example usage: "Make sure to include Susan's comment about the new SEC guidelines in the commit message"</p>
 
-<h2></h2>
-
 <h3>
 <a id="branch" class="anchor" href="#branch" aria-hidden="true"><span class="octicon octicon-link"></span></a>Branch</h3>
 
 <p>An independent series of commits off to one side that you can use to try out an experiment or create a new feature.<br>
 Example usage: "Let's create a branch to implement the new search functionality"</p>
-
-<h2></h2>
 
 <h3>
 <a id="master-branch-master" class="anchor" href="#master-branch-master" aria-hidden="true"><span class="octicon octicon-link"></span></a>Master branch (master)</h3>
@@ -533,16 +539,12 @@ Example usage: "Let's create a branch to implement the new search functionality"
 
 <p>Example usage: "Remember never to commit directly to master"</p>
 
-<h2></h2>
-
 <h3>
 <a id="feature-or-topic-branch" class="anchor" href="#feature-or-topic-branch" aria-hidden="true"><span class="octicon octicon-link"></span></a>Feature (or topic) branch</h3>
 
 <p>Whenever you're building a new piece of functionality, you'll create a branch to work on it.  That's called a feature branch.  </p>
 
 <p>Example usage: "We've got way too many feature branches.  Let's focus on getting one or two of these finished and into production"</p>
-
-<h2></h2>
 
 <h3>
 <a id="release-branch" class="anchor" href="#release-branch" aria-hidden="true"><span class="octicon octicon-link"></span></a>Release branch</h3>
@@ -551,16 +553,12 @@ Example usage: "Let's create a branch to implement the new search functionality"
 
 <p>Example usage: "We've got to fix the security bug on all of our supported release branches"</p>
 
-<h2></h2>
-
 <h3>
 <a id="merge" class="anchor" href="#merge" aria-hidden="true"><span class="octicon octicon-link"></span></a>Merge</h3>
 
 <p>This is a way to take completed work from one branch and incorporate it into another branch.  Most commonly you'll merge a feature branch into the master branch.  </p>
 
 <p>Example usage: "Great job on the 'my account' feature.  Could you merge it into master so we can push it to production?"</p>
-
-<h2></h2>
 
 <h3>
 <a id="tag" class="anchor" href="#tag" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tag</h3>
@@ -569,16 +567,12 @@ Example usage: "Let's create a branch to implement the new search functionality"
 
 <p>Example usage: "Let's tag this release and push it into production"</p>
 
-<h2></h2>
-
 <h3>
 <a id="check-out" class="anchor" href="#check-out" aria-hidden="true"><span class="octicon octicon-link"></span></a>Check out</h3>
 
 <p>To go to a different version of the project's history to see the files as of that point in time.  Most commonly you'll check out a branch to see all of the work that has been done on it, but any commit can be checked out.  </p>
 
 <p>Example usage: "could you check out the last release tag?"</p>
-
-<h2></h2>
 
 <h3>
 <a id="pull-request" class="anchor" href="#pull-request" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pull request</h3>
@@ -587,16 +581,12 @@ Example usage: "Let's create a branch to implement the new search functionality"
 
 <p>Example usage: "Go create a pull request for the new voting feature so we can see what the rest of the team thinks about it"</p>
 
-<h2></h2>
-
 <h3>
 <a id="issue" class="anchor" href="#issue" aria-hidden="true"><span class="octicon octicon-link"></span></a>Issue</h3>
 
 <p>GitHub has a feature called issues that can be used to discuss features, track bugs, or both.</p>
 
 <p>Example usage: "You're right, the login doesn't work on an iPhone.  Could you create an issue on GitHub documenting the steps to replacing the bug?"</p>
-
-<h2></h2>
 
 <h3>
 <a id="wiki" class="anchor" href="#wiki" aria-hidden="true"><span class="octicon octicon-link"></span></a>Wiki</h3>
@@ -605,16 +595,12 @@ Example usage: "Let's create a branch to implement the new search functionality"
 
 <p>Example usage: "Could you add a page to the wiki to explain how to configure the project to run on multiple servers?"</p>
 
-<h2></h2>
-
 <h3>
 <a id="clone" class="anchor" href="#clone" aria-hidden="true"><span class="octicon octicon-link"></span></a>Clone</h3>
 
 <p>Often you'll want to download a copy of a project from GitHub so you can work on it locally.  The process of copying the repository to your computer is called cloning.  </p>
 
 <p>Example usage: "Could you clone the repo, fix the bug, and then push the fix back up to GitHub later tonight?"</p>
-
-<h2></h2>
 
 <h3>
 <a id="fork" class="anchor" href="#fork" aria-hidden="true"><span class="octicon octicon-link"></span></a>Fork</h3>
@@ -626,23 +612,17 @@ Example usage: "Let's create a branch to implement the new search functionality"
 <h3>
 <a id="pull-requests-best-practices" class="anchor" href="#pull-requests-best-practices" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pull Requests Best Practices</h3>
 
-<h2></h2>
-
 <h3>
 <a id="create-pull-requests-for-everything" class="anchor" href="#create-pull-requests-for-everything" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create pull requests for everything</h3>
 
 <p>note:
 Anytime you want to fix a bug or add a new feature, make sure to do it on a branch and then create a pull request to get input before merging your work into master</p>
 
-<h2></h2>
-
 <h3>
 <a id="write-descriptive-titles" class="anchor" href="#write-descriptive-titles" aria-hidden="true"><span class="octicon octicon-link"></span></a>Write descriptive titles</h3>
 
 <p>note:
 Other team members will be looking at the pull requests page to get a sense of what's going on.  The title should give them a good idea of what you're working on.</p>
-
-<h2></h2>
 
 <h3>
 <a id="take-time-to-provide-feedback-through-comments" class="anchor" href="#take-time-to-provide-feedback-through-comments" aria-hidden="true"><span class="octicon octicon-link"></span></a>Take time to provide feedback through comments</h3>
