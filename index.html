@@ -1,937 +1,1277 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>Git-GitHub by northDacoder</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400|Glegoo:400,700|Droid+Sans:400,700|Quicksand|Josefin+Sans:100,300,400|Life+Savers:400,700|Source+Code+Pro:200,300,400,700,900|Open+Sans:400,300|Roboto+Slab:400,300|Merriweather+Sans:400,300|Gruppo|Roboto:400,900|Raleway:400,700|Montserrat:400,700|Oxygen:400,700,300|Maven+Pro:400,900|Orbitron:400,900|Sancreek' rel='stylesheet' type='text/css'>
 
-  </head>
-  <body>
-    <section class="page-header">
-        <img src="images/target-white.png" style="width: 250px; height: auto;">
-      <h1 class="project-name">Git + <i class="fa fa-github"></i> GitHub</h1>
-      <h2 class="project-tagline">Chef & Automation Toolchain</h2>
-      <!--<a href="https://github.com/northDacoder/git-github" class="btn">View on GitHub</a>
-      <a href="https://github.com/northDacoder/git-github/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/northDacoder/git-github/tarball/master" class="btn">Download .tar.gz</a>-->
-      <a href="../github-git-cheat-sheet.pdf" class="btn"><i class="fa fa-github"></i> GitHub cheat sheet </a>
-      <a href="http://cli.learncodethehardway.org/book/" class="btn">comman-line crash course</a>
+<head>
+  <meta charset="UTF-8">
+  <title>Git-GitHub by northDacoder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400|Glegoo:400,700|Droid+Sans:400,700|Quicksand|Josefin+Sans:100,300,400|Life+Savers:400,700|Source+Code+Pro:200,300,400,700,900|Open+Sans:400,300|Roboto+Slab:400,300|Merriweather+Sans:400,300|Gruppo|Roboto:400,900|Raleway:400,700|Montserrat:400,700|Oxygen:400,700,300|Maven+Pro:400,900|Orbitron:400,900|Sancreek'
+  rel='stylesheet' type='text/css'>
+  <!-- <link rel="stylesheet" href="https://bootswatch.com/paper/bootstrap.min.css" type="text/css"> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
-    </section>
 
-    <section class="main-content">
-      <h1>
-<a id="what-is-git" class="anchor" href="#what-is-git" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is Git?</h1>
+  <style type="text/css">
+    p {
+        font-family: 'Open Sans', sans-serif;
+    }
 
-<blockquote>
-<p>Git is a <a href="http://git-scm.com/book/en/v2/Getting-Started-About-Version-Control">version control system</a> that is used to track changes made to files</p>
+    ul {
+        list-style-type: none;
+    }
 
-<p>Also referred to as a <a href="http://en.wikipedia.org/wiki/Revision_control">Source Code Management</a>, or SCM tool.</p>
-</blockquote>
+    .main-content h1, .main-content h2, .main-content h3 {
+        color: rgba(0,0,0,.6);
+    }
 
-<h2>
-<a id="sound-familiar" class="anchor" href="#sound-familiar" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sound familiar?</h2>
+    .main-content h1 {
+        font-family: 'Glegoo', sans-serif;
+        font-weight: 800;
+        text-align: center;
+        font-size: 32px;
+    }
 
-<p>Most likely you have heard of other source control management systems: </p>
 
-<ul>
-<li><a href="https://subversion.apache.org/">Subversion</a></li>
-<li><a href="http://en.wikipedia.org/wiki/Team_Foundation_Server">Microsoft Team Foundation Server</a></li>
-<li><a href="http://mercurial.selenic.com/">Mercurial</a></li>
-<li>+ many more</li>
-</ul>
+    .main-content h2 {
+        font-size: 22px;
+        font-weight: bold;
+    }
 
-<h2>
-<a id="not-all-vcss-work-the-same" class="anchor" href="#not-all-vcss-work-the-same" aria-hidden="true"><span class="octicon octicon-link"></span></a>Not all VCS's work the same</h2>
+    .fa-check {
+        color: green;
+    }
 
-<p>Git is a distributed version control system. This means that everyone working on a central repository in git has a full working copy of the project history</p>
+    .lead > code {
+        font-size: 24px;
+        font-family: 'Source Code Pro', serif;
+        font-weight: 400;
+    }
 
-<h2>
-<a id="not-just-for-teams" class="anchor" href="#not-just-for-teams" aria-hidden="true"><span class="octicon octicon-link"></span></a>Not just for teams!</h2>
+    .lead > code.reg {
+        font-size: 16px;
+    }
 
-<p>Even if you are independently editing files by yourself &amp; not working on a team, you can still take advantage of all the benefits of a version control system</p>
+    p {
+        font-size: 16px;
+    }
 
-<h1>
-<a id="individual-benefits" class="anchor" href="#individual-benefits" aria-hidden="true"><span class="octicon octicon-link"></span></a>Individual Benefits</h1>
+    .well > ul > li {
+        font-size: 14px;
+    }
 
-<h2>
-<a id="ability-to-undo-changes" class="anchor" href="#ability-to-undo-changes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ability to undo changes</h2>
+    code.code-large {
+        font-size: 20px;
+        color: rgba(0,0,0,.5);
+    }
 
-<p>With git you can always revert back to a previous point in your project history </p>
+    .panel-body { padding: 60px 80px;}
+  </style>
+</head>
 
-<h2>
-<a id="other-benefits" class="anchor" href="#other-benefits" aria-hidden="true"><span class="octicon octicon-link"></span></a>Other benefits</h2>
+<body>
 
-<ul style="list-style-type: none;">
-<li><i class="fa fa-check"></i> Write messages to your future self</li>
-<li><i class="fa fa-check"></i> Maintain your own preferred frequency of commits &amp; work flow</li>
-<li><i class="fa fa-check"></i> If you make a mistake, you can always revert back to a stable point in the git history </li>
-<li><i class="fa fa-check"></i> If you decide to add collaborators to your project, catching them up will be an easy transition </li>
-<li><i class="fa fa-check"></i> A complete history of all the changes made</li>
-<li><i class="fa fa-check"></i> Complete documentation history of why changes were made </li>
-<li><i class="fa fa-check"></i> Ability to <code>checkout</code> a snapshot of a previous point in time (in an isolated environment) &amp; inspect the code</li>
-<li><i class="fa fa-check"></i> Multiple History Streams</li>
-</ul>
+<section class="page-header">
+    <img src="images/target-white.png" style="width: 250px; height: auto;">
+    <h1 class="project-name">Git + <i class="fa fa-github"></i> GitHub</h1>
+    <h2 class="project-tagline">Chef & Automation Toolchain</h2>
+    <a href="https://github.com/northdacoder/git-github" class="btn"><i class="fa fa-code-fork"></i> Fork on GitHub</a>
+    <a href="github-git-cheat-sheet.pdf" class="btn"><i class="fa fa-github-alt"></i> GitHub cheat sheet </a>
+    <a href="http://cli.learncodethehardway.org/book/" class="btn"><i class="fa fa-laptop"></i> command-line crash course</a>
+</section>
+<br>
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-primary">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            What is git?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="panel-body">
+                            <br>
+                            <center><img src="images/git-logo.png"></center>
+                            <br>
+                            <p class="lead"><strong>Git</strong> is an open source <a href="http://git-scm.com/book/en/v2/Getting-Started-About-Version-Control"><em>version control system</em></a> designed track changes files & meta information with speed & efficiency.
+                            <br><br>Also referred to as a <a href="http://en.wikipedia.org/wiki/Revision_control">Source Code Management</a>, or SCM tool.</p>
+                            <br>
+                            <p class="lead">Does this sound familiar? Most likely you've heard of other source control management systems:</p>
 
-<h2>
-<a id="confidence-to-make-changes" class="anchor" href="#confidence-to-make-changes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Confidence to make changes</h2>
+                            <ul class="list-group">
+                                <li><a href="https://subversion.apache.org/">Subversion</a></li>
+                                <li><a href="http://en.wikipedia.org/wiki/Team_Foundation_Server">Microsoft Team Foundation Server</a></li>
+                                <li><a href="http://mercurial.selenic.com/">Mercurial</a></li>
+                            </ul>
 
-<p>Because it's easy to recover a previous version of your project, you can have the confidence to make any changes you want.  If they don't work out, you can always get back to an earlier version of your work.</p>
+                            <br>
 
-<h2>
-<a id="isolated-sandbox-environments" class="anchor" href="#isolated-sandbox-environments" aria-hidden="true"><span class="octicon octicon-link"></span></a>Isolated sandbox environments</h2>
+                            <p class="lead text-center"><strong>Not all VCS's work the same</strong></p>
 
-<p>You can create different branches of history to experiment with different changes to your content or to build out different features independently.  You can then merge those back into the main project history (the master branch) once they're done, or delete them if they end up not working out.</p>
+                            <div class="well">
+                                <p>Git is a <em>distributed</em> version control system. This means full copies of the repository are on every contributing machine.</p>
+                            </div>
 
-<h1>
-<a id="team-benefits" class="anchor" href="#team-benefits" aria-hidden="true"><span class="octicon octicon-link"></span></a><i class="fa fa-group"></i> Team Benefits</h1>
 
-<h2>
-<a id="ability-to-resolve-conflicts" class="anchor" href="#ability-to-resolve-conflicts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ability to resolve conflicts</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading" role="tab" id="headingTwo">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            git | Individuals
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                      <div class="panel-body">
+                          <h3 class="text-center">Not just for teams!</h3>
 
-<p>With Git, multiple people can work on the same file at the same time.  Usually git will be able to merge the changes automatically.  If it can't, it'll show you what the conflicts are and will make it easy for you to resolve them.</p>
+                          <div class="well">
+                              <p>Even if you are independently editing files by yourself &amp; not working on a team, you can still take advantage of all the benefits of a version control system</p>
+                          </div>
+                          <br>
 
-<h2>
-<a id="independent-history-streams" class="anchor" href="#independent-history-streams" aria-hidden="true"><span class="octicon octicon-link"></span></a>Independent History Streams</h2>
+                          <h3 class="text-center">Individual Benefits</h3>
 
-<p>Different people on the project can work on different branches, allowing you to work on separate features independently and then merge the features when they're done.</p>
+                          <div class="well">
+                              <ul>
+                                  <li><i class="fa fa-check"></i> Ability to undo changes & revert back to a previous snapshot</li>
+                                  <li><i class="fa fa-check"></i> Confidence to make changes</li>
+                                  <li><i class="fa fa-check"></i> Ability to create isolated environments for experimenting with new features</li>
+                                  <li><i class="fa fa-check"></i> Write messages to your future self</li>
+                                  <li><i class="fa fa-check"></i> Maintain your own preferred frequency of commits &amp; work flow</li>
+                                  <li><i class="fa fa-check"></i> If you make a mistake, you can always revert back to a stable point in the git history </li>
+                                  <li><i class="fa fa-check"></i> If you decide to add collaborators to your project, catching them up will be an easy transition </li>
+                                  <li><i class="fa fa-check"></i> A complete history of all the changes made</li>
+                                  <li><i class="fa fa-check"></i> Complete documentation history of why changes were made </li>
+                                  <li><i class="fa fa-check"></i> Ability to <code class="checkout">checkout</code> a snapshot of a previous point in time (in an isolated environment) &amp; inspect the code</li>
+                                  <li><i class="fa fa-check"></i> Multiple History Streams</li>
+                              </ul>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading" role="tab" id="headingThree">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            git | Teams
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                      <div class="panel-body">
+                          <h3 class="text-center">Team Benefits</h3>
 
-<p>Want to learn more about GitHub Teams? Check out this great resource:</p>
+                          <br>
+                          <h4> Ability to resolve conflicts</h4>
+                          <p>With Git, multiple people can work on the same file at the same time. Usually git will be able to merge the changes automatically. If it can't, it'll show you what the conflicts are and will make it easy for you to resolve them.</p>
 
-<p><a href="https://help.github.com/enterprise/11.10.340/admin/articles/adding-users-and-teams/"><i class="fa fa-github"></i> GitHub Enterprise Teams</a></p>
+                          <br>
+                          <h4>Independent History Streams</h4>
+                          <p>Different people on the project can work on different branches, allowing you to work on separate features independently and then merge the features when they're done.</p>
 
-<hr>
+                          <br>
+                          <p>Want to learn more about GitHub Teams? Check out this great resource:</p>
+                          <p class="text-center"><a href="https://help.github.com/enterprise/11.10.340/admin/articles/adding-users-and-teams/" class="btn btn-primary"><i class="fa fa-github"></i> GitHub for Enterprise Teams</a></p>
 
-<h1>
-<a id="git-command-line" class="anchor" href="#git-command-line" aria-hidden="true"><span class="octicon octicon-link"></span></a>git command-line</h1>
+                      </div>
+                    </div>
+                </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading" role="tab" id="headingFour">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            <i class="fa fa-github"></i> GitHub
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                        <div class="panel-body">
+                            <p class="lead">Simply stated, <strong><a href="https://www.github.com"><i class="fa fa-github"></i> GitHub</a></strong> is a web-based git repository hosting service.  <br><br>
+                                GitHub combines revision control, source code management (SCM), & additional features all into one platform. <br><br>
+                                GitHub extends beyond the git command-line with a fully functioning graphical interface, both for desktop & mobile platforms.<br><br>
+                            <strong>GitHub</strong> was originally created as a way to make it easier for developers to contribute to open source projects.
 
-<h2>
-<a id="installing-git" class="anchor" href="#installing-git" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing git</h2>
+                            <br><br>
 
-<p>If you don't have git installed yet, you can download the latest version <a href="http://git-scm.com/"><i class="fa fa-download"></i> here</a></p>
+                            <strong><i class="fa fa-check"></i> More than open-source</strong><br>
+                            In addition to open-source projects, GitHub is quickly becoming the default platform for software development
 
-<p>After you have downloaded &amp; installed git on your system, open up the terminal &amp; type in the following command:</p>
+                            <br><br>
 
-<pre><code>$ git --version
-</code></pre>
+                            <strong><i class="fa fa-check"></i> Source Code Management + Features</strong><br>
+                            More than just a source code management tool, GitHub provides many additional tools for specifying, discussing, &amp; reviewing software. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading" role="tab" id="headingFive">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            <i class="fa fa-github"></i> GitHub Audience
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                        <div class="panel-body">
+                            <h3 class="text-center">Who Uses <i class="fa fa-github-alt"></i> GitHub?</h3>
+                            <br><br>
+                            <center><img src="images/benevocats.png" class="img-responsive" style="width: 300px; height: auto;"></center>
+                            <br>
+                            <br>
+                            <div class="well">
+                                <p class="lead"><strong>GitHub</strong> is used by software developers all over the world. In addition to software developers, GitHub is also used by many other professionals as well.</p>
+                            </div>
 
-<p>It should return something like this:</p>
+                            <div class="well">
+                                <h3>GitHub Audience</h3>
 
-<pre><code>$ git version 2.2.1
-</code></pre>
+                                <ul class="list-group">
+                                  <li><i class="fa fa-check"></i> Business Stakeholders</li>
+                                  <li><i class="fa fa-check"></i> Product or Project Managers</li>
+                                  <li><i class="fa fa-check"></i> Designers</li>
+                                  <li><i class="fa fa-check"></i> Copywriters</li>
+                                  <li><i class="fa fa-check"></i> Lawyers</li>
+                                  <li><i class="fa fa-check"></i> Team Members</li>
+                                  <li><i class="fa fa-check"></i> Developers</li>
+                                </ul>
+                            </div>
 
-<p>You can also see the path of your git installation by typing:</p>
+                            <div class="well">
+                                <h4><i class="fa fa-line-chart"></i> Business Stakeholders</h4>
+                                <p>Business stakeholders are able to see how your project is going</p>
+                            </div>
 
-<pre><code>$ which git
-</code></pre>
+                            <div class="well">
+                                <h4><i class="fa fa-server"></i> Product or Project Managers</h4>
+                                <p>Project managers are able to accurately estimate delivery times &amp; budgeting</p>
+                            </div>
 
-<p>It should return something like the example below</p>
+                            <div class="well">
+                                <h4><i class="fa fa-paint-brush"></i> Designers</h4>
+                                <p>Designers are able to deliver mockups, photos, html/css, &amp; other graphical assets</p>
+                            </div>
 
-<pre><code>/usr/local/bin/git
-</code></pre>
+                            <div class="well">
+                                <h4><i class="fa fa-copyright"></i> Copywriters</h4>
+                                <p>Copywriters are able to contribute marketing copy or other valuable content to an application while still in the development phase</p>
+                            </div>
 
-<hr>
+                            <div class="well">
+                                <h4><i class="fa fa-legal"></i> Lawyers</h4>
+                                <p>Lawyers are able to review the legal implications of any projects &amp; are able to contribute terms and conditions documentation or any software's privacy policy</p>
+                            </div>
 
-<h1>
-<a id="configuring-git-settings" class="anchor" href="#configuring-git-settings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring git settings</h1>
+                            <div class="well">
+                                <h4><i class="fa fa-group"></i> Team Member</h4>
+                                <p>Any team member who needs to review any code or content, or needs to contribute to a project</p>
+                            </div>
 
-<p>Now that you have git installed, we will need to configure your git user settings.  When you initialize git to start tracking file changes, a hidden subdirectory named .git will be created at the root of your project.  This is where git stores all the version history, user configuration settings, etc. </p>
+                            <div class="well">
+                                <h4><i class="fa fa-headphones"></i> Developers</h4>
+                                <p>Developers are able to contribute to projects with team members they sit right next to or with team members located thousands of miles away, anywhere in the world. (anywhere with internet that is!)</p>
+                            </div>
 
-<p>Luckily, git provides an amazing command-line tool that allows us to edit any configuration settings right from the command-line.  This saves us from having to dig around hidden .git directories trying to manually make changes to our configuration settings. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading" role="tab" id="headingSix">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            <i class="fa fa-github"></i> GitHub Collaboration
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+                        <div class="panel-body">
 
-<p>Ok, now let's setup our git configuration settings for our local user.  </p>
+                            <h3 class="text-center">Collaboration + Communication</h3>
 
-<h2>
-<a id="git-config-mandatory" class="anchor" href="#git-config-mandatory" aria-hidden="true"><span class="octicon octicon-link"></span></a>git config (mandatory)</h2>
+                            <br>
+                            <p><i class="fa fa-github"></i> GitHub's web-based interface has many collaboration features</p>
 
-<p>To check if you have an existing user:</p>
+                            <br>
+                            <ul class="list-group">
+                              <li>Task management</li>
+                              <li>Access control</li>
+                              <li>Fork repos</li>
+                              <li>Clone repos</li>
+                            </ul>
 
-<pre><code>$ git config --global user.name
-</code></pre>
 
-<p>If you don't have an existing user, create one now by running the same command along with the name of the user you want to create</p>
+                            <h3>GitHub Issues</h3>
+                            <p class="lead">With issues you can document bugs as well as new features for your team to work on.</p>
+                            <img src="images/github-issues.png" class="img-responsive" style="width: 100%; height: auto"><br>
+                            <img src="images/node-issues.png" class="img-responsive" style="width: 100%; height: auto"><br>
+                            <br>
+                            <p class="lead"> One assignee is responsible for working on one issue at any given time</p>
+                            <a href="https://guides.github.com/features/issues/" class="btn btn-success btn-lg"> More about issues</a>
 
-<pre><code>$ git config --global user.name "John Ryan"
-</code></pre>
+                            <h3>GitHub Labels</h3>
+                            <img src="images/node-labels.png" class="img-responsive" style="width: 100%; height: auto"><br>
 
-<p>Next, let's check if we have an email associated with this user:</p>
+                            <h3>GitHub Milestones</h3>
+                            <img src="images/node-milestones.png" class="img-responsive" style="width: 100%; height: auto"><br>
 
-<pre><code>$ git config --global user.email
-</code></pre>
+                            <h3>GitHub Branches</h3>
+                            <p class="lead">GitHub branches and pull requests allow you to collaborate on different bugs or features in isolated environments.</p>
+                            <br>
 
-<p>If there is no email address returned, go assign one now. </p>
+                            <h3>GitHub Pull-requests</h3>
+                            <h4>View all features</h4>
+                            <p class="lead">Looking through <span class="label label-success">open</span> pull-requests you can see all of the different features that are currently being worked on</p>
+                            <img src="images/node-prs.png" class="img-responsive" style="width: 100%; height: auto"><br>
 
-<pre><code>$ git config --global user.email "your.name@domain.com"
-</code></pre>
+                            <h4>See changes & discussion</h4>
+                            <p class="lead">Clicking on any <span class="label label-success">open</span> pull-request allows you to see all changes made as well as the discussion around the pull-request</p>
+                            <img src="images/open-prs-chat.png" class="img-responsive" style="width: 100%; height: auto"><br>
+                            <img src="images/node-pulse.png" class="img-responsive" style="width: 100%; height: auto"><br>
+                            <br>
 
-<h2>
-<a id="git-config--optional" class="anchor" href="#git-config--optional" aria-hidden="true"><span class="octicon octicon-link"></span></a>git config (+ optional)</h2>
+                            <p class="lead">Looking through the entire commit history or pulse graph lets you see what the team has been working on.</p>
+                            <img src="images/node-pulse.png" class="img-responsive" style="width: 100%; height: auto"><br>
 
-<p>To see all of your current git config settings for the logged in user:</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading" role="tab" id="headingSeven">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                            <i class="fa fa-github"></i> GitHub Wiki's & Readme's
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
+                        <div class="panel-body">
+                            <h3>Wiki's</h3>
+                            <p class="lead">Every repository on GitHub comes with a section for hosting documentation for your projects, called a <strong>wiki.</strong>
+                            GitHub Wikis provide information about how the project is designed, how it was conceived, & information about future plans.  Wiki's can be edited
+                            directly on GitHub, but you can also use your favorite text-editor & push your changes right from the git cli.</p>
+                            <img src="images/node-wiki.png" class="img-responsive" style="width: 100%; height: auto">
 
-<pre><code>$ git config --global --list
-</code></pre>
+                            <hr>
 
-<p>To see your system wide git config settings:</p>
+                            <h3>README.md</h3>
+                            <p class="lead">A GitHub README.md is intended to quickly get you up to speed on everything about a project. README's can be written in
+                            Markdown, RST, or Textile. </p>
+                            <img src="images/node-readme.png" class="img-responsive" style="width: 100%; height: auto">
+                            <br>
+                            <br>
+                            <p class="text-center"><a href="https://github.com/github/markup" class="btn btn-primary btn-lg"> All about markup language</a></p>
+                            <br>
+                            <p class="lead"> New to documentation?  Check out this great beginners reource to writing documentation</p>
+                            <p class="text-center"><a href="http://docs.writethedocs.org/writing/beginners-guide-to-docs/" class="btn btn-success btn-lg"> Writing Documentation</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading" role="tab" id="headingEight">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                            <i class="fa fa-download"></i> Installing git
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
+                        <div class="panel-body">
+                            <center><img src="images/git-logo.png"></center>
+                            <br>
+                            <br>
+                            <p class="lead">If you don't have git installed yet, you can download the latest version git's website</p>
+                            <a href="http://git-scm.com/" class="btn btn-success btn-lg">Install git <i class="fa fa-arrow-circle-o-down"></i></a>
+                            <br>
+                            <br>
+                            <br>
+                            <h3>Post-install</h3>
+                            <p>After you have downloaded &amp; installed git on your system, open up the terminal &amp; type in the following command:</p>
+                            <pre><code>$ git --version</code></pre>
+                            <p>It should return something like this:</p>
+                            <pre><code>$ git version 2.2.1</code></pre>
 
-<pre><code>$ git config --list
-</code></pre>
+                            <br>
+                            <p>You can also see the path of your git installation by typing:</p>
+                            <pre><code>$ which git</code></pre>
+                            <p>It should return something like the example below</p>
+                            <pre><code>/usr/local/bin/git</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading" role="tab" id="headingNine">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                            <i class="fa fa-cogs"></i> Setup git (mandatory)
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseNine" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingNine">
+                        <div class="panel-body">
+                            <h3>First-time <strong>git config</strong> setup</h3>
 
-<h3>
-<a id="customizing-git" class="anchor" href="#customizing-git" aria-hidden="true"><span class="octicon octicon-link"></span></a>Customizing Git</h3>
+                            <p class="lead">Now that you have git installed, we will need to configure your git user settings. When you initialize git to start tracking file changes, a hidden subdirectory named <code>.git</code> will be created at the root of your project. This is where git stores all the
+                            version history, user configuration settings, etc. <br><br>
+                            Luckily, git provides an amazing command-line tool that allows us to edit any configuration settings right from the command-line. This saves us from having to dig around hidden .git directories trying to manually make changes to our configuration
+                            settings.</p>
 
-<p>Checking your settings:</p>
+                            <br>
 
-<pre><code>$ git config --settings
+                            <p class="lead">Now that we have git properly installed, we can configure our user settings </p>
+
+                            <br>
+                            <br>
+
+                            <h3>git config (mandatory)</h3>
+
+                            <p>To check if you have an existing user:</p>
+                            <pre><code>$ git config --global user.name</code></pre>
+
+                            <p>If you don't have an existing user, create one now by running the same command along with the name of the user you want to create</p>
+                            <pre><code>$ git config --global user.name "John Ryan"</code></pre>
+
+                            <p>Next, let's check if we have an email associated with this user:</p>
+                            <pre><code>$ git config --global user.email</code></pre>
+
+                            <p>If there is no email address returned, go assign one now. </p>
+                            <pre><code>$ git config --global user.email "your.name@domain.com"</code></pre>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading" role="tab" id="headingTen">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                            <i class="fa fa-cogs"></i> Setup git (optional)
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseTen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTen">
+                        <div class="panel-body">
+                            <h3 class="text-center">Optional <strong>git config</strong> setttings</h3><br>
+
+                            <p>To see all of your current git config settings for the logged in user:</p>
+
+                            <pre><code>$ git config --global --list</code></pre>
+
+                            <p>To see your system wide git config settings:</p>
+
+                            <pre><code>$ git config --list</code></pre>
+
+                            <br>
+                            <br>
+                            <h3 class="text-center">Checking git config</h3>
+<!--
+<pre>
+<code>$ git config --settings
 $ git config --global
 $ git config --user
 $ git config --global --list
 $ git config --list
-$ git config --global color.ui true
+$ git config --global color.ui
 $ git config --global color.branch
 $ git config --global color.diff
 $ git config --global color.interactive
 $ git config --global color.status
-$ git config --global core.autocrlf
-</code></pre>
+$ git config --global core.autocrlf</code>
+</pre>
 
-<p>To change settings you need to pass in variables after the commands above
-$ git config --settings</p>
+<br>
+<br>
+                            <p class="lead">To change your git config settings you will need to pass in variable at the end of each command</p>
 
-<pre><code>$ git config --global color.ui true
-$ git config --global color.branch
+                            <h3>Changing your config settings</h3>
+
+<pre>
+<code>$ git config --global color.ui true
+$ git config --global color.branch "red"
 $ git config --global color.diff "blue black bold"
 $ git config --global color.interactive
 $ git config --global color.status
-$ git config --global core.autocrlf
-$ git log
-</code></pre>
+$ git config --global core.autocrlf</code>
+</pre> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading" role="tab" id="headingEleven">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+                            <i class="fa fa-plus"></i> Creating Repos
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseEleven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEleven">
+                        <div class="panel-body">
+                            <p class="lead text-center">To get started using git, we need to do one of the following:</p>
+
+                            <div class="panel panel-success">
+                                <div class="panel-heading">
+                                    <i class="fa fa-code-fork"></i> Fork existing repo & clone using SSH
+                                </div>
+                            </div>
+
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <i class="fa fa-code-fork"></i> Fork existing repo & clone using HTTPS
+                                </div>
+                            </div>
+
+                            <div class="panel panel-info">
+                                <div class="panel-heading">
+                                    Initialize git on an existing local project
+                                </div>
+                            </div>
+
+                            <div class="panel panel-danger">
+                                <div class="panel-heading">
+                                    Create a new project & initialize git
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-success">
+                    <div class="panel-heading" role="tab" id="headingTwelve">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
+                            <i class="fa fa-code-fork"></i> Fork + clone existing repo using SSH
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseTwelve" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwelve">
+                        <div class="panel-body">
+                            <div class="panel panel-success">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Fork existing repo then clone using using SSH</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        <li>1. On GitHub, navigate to the repo's main page & click <code><i class="fa fa-code-fork"></i> fork</code></li>
+                                        <li>2. Choose the user or organization that you want to <code><i class="fa fa-code-fork"></i> fork</code> the repo to</li>
+                                        <li>3. After the forked copy has been created under your account, copy the ssh endpoint</li>
+                                        <li><img src="images/git-clone-existing-ssh.png" style="width: 150px; height: auto; margin: 0 auto;"></li>
+                                        <li>4. Run the command in your terminal:</li>
+                                    </ul>
+
+                            <pre><code>git clone git@git.target.com:chef-training/git-clone-empty.git</code>
+                            </pre>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading" role="tab" id="headingThirteen">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThirteen" aria-expanded="false" aria-controls="collapseThirteen">
+                            <i class="fa fa-code-fork"></i> Fork + clone existing repo using HTTPS
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseThirteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThirteen">
+                        <div class="panel-body">
+                            <h3 class="text-center">Fork existing repo then clone using using HTTPS</h3><br>
+
+                            <ul class="list-group">
+                                <li>1. On GitHub, navigate to the repo's main page & click <code><i class="fa fa-code-fork"></i> fork</code></li>
+                                <li>2. Choose the user or organization that you want to <code><i class="fa fa-code-fork"></i> fork</code> the repo to</li>
+                                <li>3. After the forked copy has been created under your account, copy the HTTPS endpoint</li>
+                                <li><img src="images/git-clone-existing-ssh.png" style="width: 150px; height: auto; margin: 0 auto;"></li>
+                                <li>4. Run the command in your terminal:</li>
+                                <li>5. Enter your github username & password to authenticate</li>
+                            </ul>
+
+                            <pre><code>git clone https://git.target.com/chef-training/git-clone-empty.git</code></pre>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-info">
+                    <div class="panel-heading" role="tab" id="headingFourteen">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFourteen" aria-expanded="false" aria-controls="collapseFourteen">
+                            <i class="fa fa-laptop"></i> Initialize git on existing local project
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseFourteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFourteen">
+                        <div class="panel-body">
+                            <h3 class="text-center">Initialize git on an existing local project</h3><br>
+
+                            <ul class="list-group">
+                                <li>1. Open up your terminal & navigate to the root directory of an existing project</li>
+                                <li>2. Make sure that an existing .git subdirectory does not exist by running the <code>ls -la</code> command</li>
+                                <li>3. Initialize git by running the <code>git init</code> command</li>
+                                <li>4. Check that the hidden <code>.git/</code> subdirectory has been created with <code>ls -la</code></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-danger">
+                    <div class="panel-heading" role="tab" id="headingFifteen">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFifteen" aria-expanded="false" aria-controls="collapseFifteen">
+                            <i class="fa fa-laptop"></i> Creating a new project (locally) & initialize git
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseFifteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFifteen">
+                        <div class="panel-body">
+                            <h3 class="text-center">Initializing git on an existing local project</h3><br>
+
+                            <ul class="list-group">
+                                <li>1. Open up your terminal & navigate to the root directory of an existing project</li>
+                                <li>2. Make sure that an existing .git subdirectory does not exist by running the <code>ls -la</code> command</li>
+                                <li>3. Initialize git by running the <code>git init</code> command</li>
+                                <li>4. Check that the hidden <code>.git/</code> subdirectory has been created with <code>ls -la</code></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-warning">
+                    <div class="panel-heading" role="tab" id="headingSixteen">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSixteen" aria-expanded="false" aria-controls="collapseSixteen">
+                            <i class="fa fa-github-alt"></i> Example 1 - fork & clone
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseSixteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSixteen">
+                        <div class="panel-body">
+                            <h2>Step 1</h2>
+
+                            <p class="lead">
+                                To get started let's clone the <strong>git-clone-existing</strong> repo from <i class="fa fa-github"></i> GitHub by running command:</p>
+                        <pre><code>git clone git@target.com:chef-training/git-clone-existing.git
+                        </code></pre>
+                            <br>
+                            <p class="lead"><strong>What's happening?</strong></p>
+                            <p class="lead">Here's whats happening when we read the log messaages from the terminal</p>
+                            <p><img src="images/git-clone-existing-terminal.png"></p>
+                            <p class="lead">It should say that it has received 100% of the objects</p>
+                            <br>
+
+                            <h2>Step 2</h2>
+
+                            <p class="lead">After the directory has been successfully cloned to your local system, we need to change directories into the project.</p>
+                        <pre><code>cd git-clone-existing</code></pre>
+                            <p><img src="images/git-clone-existing-cd.png"></p>
+                            <br>
+                            <p class="lead">To check that git has been properly initialized we need to look for a hidden subdirectory named <strong>.git</strong>. If you type <code class="reg">ls</code> into the terminal, you should see the README.md file &amp; the index.html file</p>
+                            <p><img src="images/git-clone-existing-ls.png"></p>
+                            <p class="lead">The .git subdirectory is hidden by default, we need to type <code class="reg">ls -la</code> to see it</p>
+                            <p><img src="images/git-clone-existing-lsla.png"></p>
+                            <br>
+
+                            <div class="well">
+                                <h2>Remote Endpoints</h2>
+
+                                <p class="lead">When cloning an existing repo from github, a remote with an alias of <code class="reg">origin</code> that points to the url of the remote repository that was cloned.
+                                <br><br>
+                                In this case the remote will point to:
+                                <br><br>
+                                <code class="reg">git@target.com:chef-training/git-clone-existing.git</code>
+                                <br><br>
+                                which will be set automatically</p>
+                            </div>
+
+                            <div class="well">
+                                <h2>Check for Existing Remotes</h2>
+
+                                <p>To see existing remotes set for any git repo type the following command: </p>
+                                <p><img src="images/git-clone-existing-remote.png"></p>
+                            </div>
+
+                            <div class="well">
+                                <h2>Removing a remote</h2>
+
+                                <p>To remove a remote you can type git remote remove REMOTE-ALIAS, where REMOTE-ALIAS is the name of the remote you want to remove. The default remote from a cloned repo will have a name of origin. </p>
+                                <p><img src="images/git-clone-existing-remote-remove.png"></p>
+                            </div>
+
+                            <div class="well">
+                                <h2>Adding a remote</h2>
+                                <p>To add a remote you can run the command:</p>
+
+                        <pre>
+                        <code>git remote add &lt;REMOTE-ALIAS&gt; &lt;REMOTE-URL&gt;</code>
+                        </pre>
+
+                                <p>where REMOTE-NAME is the name of the remote you would like to add &amp; REMOTE-URL is the endpoint that the remote will point to on GitHub. This could be origin, github, heroku, aws, docker, openstack, etc.</p>
+                                <p><img src="images/git-clone-existing-remote-add.png"></p>
+                            </div>
+
+                            <div class="well">
+                                <h2>Changing a remote</h2>
+                                <p>To change the URL of an existing remote, run the command:</p>
+
+                        <pre>
+                        <code>git remote set-url &lt;REMOTE-ALIAS&gt; &lt;NEW-REMOTE-URL&gt;</code>
+                        </pre>
+
+                                <p class="lead"><strong>REMOTE-ALIAS</strong> - The name of the remote, whose endpoint you want to change <br>
+                                <strong>NEW-REMOTE-URL</strong> - The new URL you want to assign to this remote</p>
+                                <p><img src="images/git-clone-existing-remote-seturl.png"></p>
+                                <br>
+                                <p class="lead">In this example, <code class="reg">origin</code> is the alias of our remote & <code class="reg">git@target.com:chef-training/git-clone-existing.git</code>
+                                <br> is the remote url.</p>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-warning">
+                    <div class="panel-heading" role="tab" id="headingSeventeen">
+                      <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSeventeen" aria-expanded="false" aria-controls="collapseSeventeen">
+                            <i class="fa fa-github-alt"></i> Example 1 - Staging files & typical workflow
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseSeventeen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeventeen">
+                        <div class="panel-body">
+                            <h3 class="text-center">Typical Workflow</h3><br>
+
+                            <h3>Step 1 <code class="code-large">git add</code></h3>
+                            <br>
+                            <div class="well">
+                                <p class="lead"><code class="reg">git add</code> is the command to move changes in your current working directory to the staging area. </p>
+                            </div>
+
+                            <h4>Example:</h4>
+                            <p class="lead">Let's say that we have just created new <strong>index.html</strong> page & <strong>README.md</strong> & want to add them to the staging area for our next commit.</p>
+
+                            <p class="lead">We can use the
+                            <code class="reg">git add</code> command along with the name of the files we want to add. In this case we would run the command:</p>
+
+                            <pre><code>$ git add index.html</code></pre>
+                            <pre><code>$ git add README.md</code></pre>
+
+                            <p class="lead">Or to add all the files in your current directory (<strong>index.html</strong> + <strong>README.md</strong>), we can just run</p>
+
+                            <pre><code>$ git add *</code></pre>
+
+                            <br>
+                            <br>
+
+                            <h3>Step 2 <code class="code-large">git status</code></h3>
+
+                            <p class="lead">Now that we have added files to the staging area, we can see what has been modified and staged since our last commit was made by running the
+                            <code class="reg">git status</code> command</p>
+
+                            <pre><code>$ git status A index.html A README.md</code></pre><br>
+
+                            <h3>Step 3 <code class="code-large">git commit</code></h3>
+
+                            <p class="lead">Next we are going to the use the
+                            <code class="reg">git commit</code> command to record a snapshot of the staging area. Git records our name &amp; email address from our
+                            <code class="reg">git config --global user.name</code> &amp;
+                            <code class="reg">git config --global user.email</code> settings from earlier. </p>
+
+                            <p class="lead">Along with our username &amp; email address associated with these changes, you will want to also include a message that will also be included in this snapshot. To record your snapshot along with a commit message run the following command &amp; provide
+                            a message inside quotations.</p>
+
+                            <pre><code>$ git commit -m "add index.html &amp; README.md file"</code></pre>
+
+                            <p class="lead">If you forget to add the
+                            <code class="reg">-m</code> along with a message for the commit, git will automatically open the
+                            <code class="reg">vim</code> editor for you to add a commit message &amp; save before continuing. </p>
+
+                            <br>
+                            <br>
+
+                            <h3>Step 4 <code class="code-large">git push</code></h3>
+
+                            <p class="lead">Now that we have created a commit, we can use the
+                            <code class="reg">git push</code> command to push (send) our changes to a remote repository. </p>
+                            <br>
+
+                            <p class="lead">To push our changes to a remote repo, we need to also include: </p>
+                            <div class="well">
+                                <strong>alias</strong> - name of the remote repository you want to send changes to branch <br>
+                                <strong>remote</strong> - name of the branch that you want to create (if not already created) on the remote repository
+                            </div>
+
+                            <pre><code>$ git push [alias] [branch]</code></pre>
+
+                            <br>
+
+                            <h4>Common defaults</h4>
+                            <p> alias - <code class="code-large">origin</code> <br>
+                            branch - <code class="code-large">master</code> </p>
+                            <p>If you are still working on the master branch &amp; haven't changed any of the default settings after cloning, you would run the command:</p>
+
+                            <pre><code>$ git push origin master</code></pre>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="main-content">
+
+
+
+
+    <h1 class="text-center">Setting up a repo (Locally)</h1>
+
+    <br>
+    <br>
+
+    <div class="panel panel-danger">
+        <div class="panel-heading">
+        </div>
+        <div class="panel-body">
+            <p>Now we will go through setting up a new git repository from scratch.</p>
+        </div>
+    </div>
+    <br>
+
+    <h2>Step 1</h2>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <p>Change directories (<code class="code-large">cd desktop</code>) to your desktop</p>
+        </div>
+        <img src="images/git-create-local-repo-cd.png">
+    </div>
+    <br>
+
+    <h2>Step 2</h2>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h2 class="text-center">Create a new directory</h2>
+
+            <p>Create a new directory (<code class="code-large">mkdir</code>) &amp; change (<code class="code-large">cd</code>) into your directory</p>
+        </div>
+        <img src="images/git-create-local-repo-mkdir.png">
+    </div>
+
+    <div class="well">
+        <p><strong>Commands</strong><br>
+        <code class="code-large">cd</code> - "change directory" <br>
+        <code class="code-large">mkdir</code>- "make directory"</p>
+    </div>
+    <br>
+    <br>
+    <p class="lead text-center"><strong>New to the command line?</strong>
+    <br>
+    <br> Checkout this great free course on getting started!</p>
+    <p class="text-center"><a href="http://cli.learncodethehardway.org/book/" class="btn btn-success btn-lg">command-line crash course <i class="fa fa-rocket"></i></a></p>
+    <br>
+    <br>
+    <br>
+    <h2>Step 3</h3>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h2 class="text-center">Initialize git</h2>
+            <p>Now that we are inside the directory, we can initialize git within this directory using the <code class="code-large">git init</code> command</p>
+        </div>
+        <img src="images/git-create-local-repo-init.png">
+    </div>
+
+    <div class="well">
+        <h2>About git init</h2>
+        <p>The git init command adds a hidden <code class="code-large">.git</code> subdirectory that stores all the meta information, file tracking, etc.
+        You will not need to make any changes directly to this folder.  <br><br>
+        Instead, git provides you access to different configurations through their command-line tools.</p>
+        <br><br>
+        <p class="text-center"><a href="../github-git-cheat-sheet.pdf" class="btn btn-primary btn-lg"><i class="fa fa-github"></i> git command-line cheat sheet <i></i></a></p>
+    </div>
 
-<hr>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <p>Although we don't need to go into the .git folder, we should check to make sure that its there &amp; that git has been properly initialized.
+                To check that you have properly initialized git for this directory, type in the command ls -la</p>
+        </div>
+        <img src="images/git-create-local-repo-lsla.png">
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <p>If we only type in ls, we won't be able to see the .git subdirectory since it is hidden from search by default</p>
+        </div>
+        <img src="images/git-create-local-repo-ls.png">
+    </div>
 
-<hr>
+    <br>
+    <br>
 
-<h1>
-<a id="typical-workflow" class="anchor" href="#typical-workflow" aria-hidden="true"><span class="octicon octicon-link"></span></a>Typical workflow</h1>
+    <div class="well">
+        <h1>git branch</h1>
+        <br>
+        <p class="lead"><code>git branch</code> is your administration command for all things branch related. It lets you create isolated dev environments from within a single repository.</p>
+        <br>
+        <code class="code-large">git branch BRANCH-NAME</code>
+    </div>
 
-<h2>
-<a id="step-1-git-add" class="anchor" href="#step-1-git-add" aria-hidden="true"><span class="octicon octicon-link"></span></a>STEP 1: git add</h2>
+    <div class="well">
+        <h1>git checkout</h1>
+        <br>
+        <p class="lead"><code>git checkout</code> is the command for navigating around existing branches.  This is also the command for checking out old commits, deleted files, &amp; old revisions.</p>
+        <br>
+        <code class="code-large">git checkout BRANCH-NAME</code>
+    </div>
 
-<p>'git add' is the command to move changes in your current working directory to the staging area.  </p>
+    <br>
+    <br>
+    <br>
 
-<p>Example:
-Let's say that we have just created new ìndex.html<code>page &amp;</code>README.md` &amp; want to add them to the staging area for our next commit.</p>
 
-<p>We can use the <code>git add</code> command along with the name of the files we want to add.  In this case we would run the command:</p>
+    <!-- <h3>Git &amp; GitHub Concepts</h3>
 
-<pre><code>$ git add index.html
-$ git add README.md
-</code></pre>
+    <p>Commit Whenever you save your changes to one or more files to history in Git, you create a new commit.</p>
 
-<p>Or to add all the files in your current directory (index.html + README.md), we can just run</p>
+    <h3>Commit Message</h3>
 
-<pre><code>$ git add *
-</code></pre>
+    <p>Every time you make a commit, you need to supply a message that describes why the change was made. The commit message is invaluable when trying to understand later why a certain change was implemented.</p>
 
-<h2>
-<a id="step-2-git-status" class="anchor" href="#step-2-git-status" aria-hidden="true"><span class="octicon octicon-link"></span></a>STEP 2: git status</h2>
+    <p>Example usage: "Make sure to include Susan's comment about the new SEC guidelines in the commit message"</p>
 
-<p>Now that we have added files to the staging area, we can see what has been modified and staged since our last commit was made by running the <code>git status</code> command</p>
+    <h3>Branch</h3>
 
-<pre><code>$ git status
-A index.html
-A README.md
-</code></pre>
+    <p>An independent series of commits off to one side that you can use to try out an experiment or create a new feature.
+      <br> Example usage: "Let's create a branch to implement the new search functionality"</p>
 
-<h2>
-<a id="step-3-git-commit" class="anchor" href="#step-3-git-commit" aria-hidden="true"><span class="octicon octicon-link"></span></a>STEP 3: git commit</h2>
+    <h3>Master branch (master)</h3>
 
-<p>Next we are going to the use the <code>git commit</code> command to record a snapshot of the staging area.  Git records our name &amp; email address from our <code>git config --global user.name</code> &amp; <code>git config --global user.email</code> settings from earlier. </p>
+    <p>Whenever you create a new Git project, there is a default branch created that is called master. This is the branch that your work should end up on eventually once it's ready to push to production.</p>
 
-<p>Along with our username &amp; email address associated with these changes, you will want to also include a message that will also be included in this snapshot.  To record your snapshot along with a commit message run the following command &amp; provide a message inside quotations.</p>
+    <p>Example usage: "Remember never to commit directly to master"</p>
 
-<pre><code>$ git commit -m "add index.html &amp; README.md file"
-</code></pre>
+    <h3>Feature (or topic) branch</h3>
 
-<p>If you forget to add the <code>-m</code> along with a message for the commit, git will automatically open the <code>vim</code> editor for you to add a commit message &amp; save before continuing.  </p>
+    <p>Whenever you're building a new piece of functionality, you'll create a branch to work on it. That's called a feature branch. </p>
 
-<h2>
-<a id="step-4-git-push" class="anchor" href="#step-4-git-push" aria-hidden="true"><span class="octicon octicon-link"></span></a>STEP 4: git push</h2>
+    <p>Example usage: "We've got way too many feature branches. Let's focus on getting one or two of these finished and into production"</p>
 
-<p>Now that we have created a commit, we can use the <code>git push</code> command to push (send) our changes to a remote repository.  </p>
+    <h3>Release branch</h3>
 
-<p>To push our changes to a remote repo, we need to also include:</p>
+    <p>If you have a manual QA process or have to support old versions of your software for your customers, you might need a release branch as a place to make necessary fixes or updates. There is no technical difference between a feature or release branch,
+      but the distinction is useful when talking about a project with your team. </p>
 
-<p>alias - name of the remote repository you want to send changes to
-branch - name of the branch that you want to create (if not already created) on the remote repository </p>
+    <p>Example usage: "We've got to fix the security bug on all of our supported release branches"</p>
 
-<pre><code>$ git push [alias] [branch]
-</code></pre>
+    <h3>Merge</h3>
 
-<p>Common defaults:
-alias - origin
-branch - master </p>
+    <p>This is a way to take completed work from one branch and incorporate it into another branch. Most commonly you'll merge a feature branch into the master branch. </p>
 
-<p>If you are still working on the master branch &amp; haven't changed any of the default alias settings you would run the command:</p>
+    <p>Example usage: "Great job on the 'my account' feature. Could you merge it into master so we can push it to production?"</p>
 
-<pre><code>$ git push origin master
-</code></pre>
+    <h3>Tag</h3>
 
-<h1>
-<a id="git-branch" class="anchor" href="#git-branch" aria-hidden="true"><span class="octicon octicon-link"></span></a>git branch</h1>
+    <p>A reference to a specific historic commit. Most often used to document production releases so you know exactly which versions of the code went into production and when.</p>
 
-<p>git branch is your administration command for all things branch related.  It lets you isolated dev environments from within a single repository.</p>
+    <p>Example usage: "Let's tag this release and push it into production"</p>
 
-<h1>
-<a id="git-checkout" class="anchor" href="#git-checkout" aria-hidden="true"><span class="octicon octicon-link"></span></a>git checkout</h1>
+    <h3>Check out</h3>
 
-<p>git checkout is the command for navigating around existing branches</p>
+    <p>To go to a different version of the project's history to see the files as of that point in time. Most commonly you'll check out a branch to see all of the work that has been done on it, but any commit can be checked out. </p>
 
-<p>note: This is also the command for checking out old commits, deleted files, &amp; old revisions.</p>
+    <p>Example usage: "could you check out the last release tag?"</p>
 
-<h2>
-<a id="creating-repositories" class="anchor" href="#creating-repositories" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating Repositories</h2>
+    <h3>Pull request</h3>
 
-<p>To get started using git, we need to either clone (download project + version history) or create a local repository from scratch.  </p>
+    <p>Originally, a pull request was used to request that someone else review the work you completed on a branch and then merge it into master. Now, pull requests are often used earlier in the process to start a discussion about a possible feature.</p>
 
-<h2>
-<a id="clone-existing-repo-using-ssh" class="anchor" href="#clone-existing-repo-using-ssh" aria-hidden="true"><span class="octicon octicon-link"></span></a>Clone Existing Repo Using SSH</h2>
+    <p>Example usage: "Go create a pull request for the new voting feature so we can see what the rest of the team thinks about it"</p>
 
-<p>To clone an existing empty repo from github.com using SSH:</p>
+    <h3>Issue</h3>
 
-<p>Copy the ssh endpoint</p>
-<img src="images/git-clone-empty-ssh.png">
+    <p>GitHub has a feature called issues that can be used to discuss features, track bugs, or both.</p>
 
-<p>& run the command in your terminal:</p>
+    <p>Example usage: "You're right, the login doesn't work on an iPhone. Could you create an issue on GitHub documenting the steps to replacing the bug?"</p>
 
-<pre><code>git clone git@git.target.com:chef-training/git-clone-empty.git
-</code></pre>
+    <h3>Wiki</h3>
 
-<h2>
-<a id="clone-existing-repo-using-https" class="anchor" href="#clone-existing-repo-using-https" aria-hidden="true"><span class="octicon octicon-link"></span></a>Clone Existing Repo Using HTTPS</h2>
+    <p>Originally developed by Ward Cunningham, wikis are a lightweight way of creating web pages with simple links between them. GitHub projects often use wikis for documentation. </p>
 
-<p>You can also clone repo's from github using https, but you will need to provide your username &amp; password each time you want to commit changes back up to the github remote.</p>
+    <p>Example usage: "Could you add a page to the wiki to explain how to configure the project to run on multiple servers?"</p>
 
-<p>Copy the https endpoint</p>
+    <h3>Clone</h3>
 
-<img src="images/git-clone-empty-https.png">
+    <p>Often you'll want to download a copy of a project from GitHub so you can work on it locally. The process of copying the repository to your computer is called cloning. </p>
 
-<pre><code>git clone https://git.target.com/chef-training/git-clone-empty.git
-</code></pre>
+    <p>Example usage: "Could you clone the repo, fix the bug, and then push the fix back up to GitHub later tonight?"</p>
 
-<h2>
-<a id="clone-existing-repo" class="anchor" href="#clone-existing-repo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Clone Existing Repo</h2>
+    <h3>Fork</h3>
 
-<p>To clone an existing repo from github.com, go to the main project page &amp; find the clone options located on the right side of the screen</p>
+    <p>Sometimes you don't have the necessary permission to make changes directly to a project. Perhaps it's an open source project written by people you don't know or it's a project written by another group at your company that you don't work with much.
+      If you want to submit changes to such a project, first you need to make a copy of the project under your user account on GitHub. That process is called forking the repository. You can then clone it, make changes, and submit them back to the original
+      project using a pull request. </p>
 
-<p style="text-align: center;"><img src="images/git-clone-existing-ssh.png" style="width: 250px; height: auto;"></p>
+    <p>Example usage: "I'd love to see how you'd rewrite the home page marketing copy. Fork the repo and submit a pull request with your proposed changes."</p>
 
-<h2>
-<a id="clone-existing-repo-1" class="anchor" href="#clone-existing-repo-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Clone Existing Repo</h2>
+    <h3>Pull Requests Best Practices</h3>
 
-<p>Copy the ssh url &amp; type the following command into the terminal</p>
+    <h3>Create pull requests for everything</h3>
 
-<pre><code>git clone git@git.target.com:chef-training/git-clone-existing.git
-</code></pre>
+    <p>note: Anytime you want to fix a bug or add a new feature, make sure to do it on a branch and then create a pull request to get input before merging your work into master</p>
 
-<h2>
-<a id="whats-happening" class="anchor" href="#whats-happening" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's happening</h2>
+    <h3>Write descriptive titles</h3>
 
-<p>Here's whats happening when we read the log messaages from the terminal</p>
+    <p>note: Other team members will be looking at the pull requests page to get a sense of what's going on. The title should give them a good idea of what you're working on.</p>
 
-<p><img src="images/git-clone-existing-terminal.png"></p>
+    <h3>Take time to provide feedback through comments</h3>
 
-<p>It should say that it has received 100% of the objects</p>
+    <p>Even if you're not <a href="https://github.com/blog/821" class="user-mention">@mentioned</a>. This will give you a good sense of whats going on with the project and will improve the overall quality of the work.</p>
 
-<h2>
-<a id="change-directories" class="anchor" href="#change-directories" aria-hidden="true"><span class="octicon octicon-link"></span></a>Change directories</h2>
+    <h2></h2>
 
-<p>Now that we have successfully cloned this repo to our desktop, we still need to change directories (cd) so that we are in the project.</p>
+    <h3><a href="https://github.com/blog/821" class="user-mention">@mention</a> key people that should join the conversation</h3>
 
-<p><img src="images/git-clone-existing-cd.png"></p>
+    <p>If you want feedback from marketing, legal, and the operations team, <a href="https://github.com/blog/821" class="user-mention">@mention</a> necessary users to ensure they see the pull request and make it more likely that you get feedback</p>
 
-<h2>
-<a id="list-all-the-files" class="anchor" href="#list-all-the-files" aria-hidden="true"><span class="octicon octicon-link"></span></a>List all the files</h2>
+    <h2></h2>
 
-<p>Now when you type ls into the terminal you should see the README.md file &amp; the index.html file</p>
+    <h3>Run your tests</h3>
 
-<p><img src="images/git-clone-existing-ls.png"></p>
+    <p>note: Make sure that at least one developer downloads the latest changes from a pull request, checks out the appropriate branch, and runs your automated tests. It isn't enough just to look at the code visually for nontrivial changes.</p>
 
-<p>If you type ls -la to also show hidden files you should see the hidden .git directory as well</p>
+    <h2></h2>
 
-<p><img src="images/git-clone-existing-lsla.png"></p>
+    <h3>Decide on a clear policy around merging pull requests</h3>
 
-<h2>
-<a id="remote-endpoints" class="anchor" href="#remote-endpoints" aria-hidden="true"><span class="octicon octicon-link"></span></a>Remote Endpoints</h2>
+    <p>Most companies require that one or two people other than the primary author of the pull request review and provide a
+      <img class="emoji" title=":+1:" alt=":+1:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f44d.png" height="20"
+      width="20" align="absmiddle"> before the pull request is merged in</p>
 
-<p>When cloning an existing repo from github, you will already have an origin remote set for you to start making pull requests.</p>
+    <h2>What's happening</h2>
 
-<h2>
-<a id="check-existing-remotes" class="anchor" href="#check-existing-remotes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Check Existing Remotes</h2>
+    <p>Here's whats happening when we read the log messaages from the terminal</p>
 
-<p>To see existing remotes set for any git repo type the following command:  </p>
+    <p>
+      <img src="images/git-clone-existing-terminal.png">
+    </p>
 
-<p><img src="images/git-clone-existing-remote.png"></p>
+    <p>It should say that it has received 100% of the objects</p>
 
-<h2>
-<a id="remove-a-remote" class="anchor" href="#remove-a-remote" aria-hidden="true"><span class="octicon octicon-link"></span></a>Remove a Remote</h2>
+    <h2></h2>
 
-<p>To remove a remote you can type git remote remove REMOTE-NAME, where REMOTE-NAME is the name of the remote you want to remove.  The default remote from a cloned repo will have a name of origin.  </p>
+    <h2>Change directories</h2>
 
-<p><img src="images/git-clone-existing-remote-remove.png"></p>
+    <p>Now that we have successfully cloned this repo to our desktop, we still need to change directories (cd) so that we are in the project.</p>
 
-<h2>
-<a id="add-a-remote" class="anchor" href="#add-a-remote" aria-hidden="true"><span class="octicon octicon-link"></span></a>Add a Remote</h2>
+    <p>
+      <img src="images/git-clone-existing-cd.png">
+    </p>
 
-<p>To add a remote you can run the command:</p>
 
-<pre><code>git remote add REMOTE-NAME REMOTE-URL,
-</code></pre>
+    <h2>List all the files</h2>
 
-<p>where REMOTE-NAME is the name of the remote you would like to add &amp; REMOTE-URL is the endpoint that the remote will point to on GitHub.  This could be origin, github, heroku, aws, docker, openstack, etc.</p>
+    <p>Now when you type ls into the terminal you should see the README.md file &amp; the index.html file</p>
 
-<p><img src="images/git-clone-existing-remote-add.png"></p>
+    <p>
+      <img src="images/git-clone-existing-ls.png">
+    </p>
 
-<h2>
-<a id="change-a-remote" class="anchor" href="#change-a-remote" aria-hidden="true"><span class="octicon octicon-link"></span></a>Change a Remote</h2>
+    <p>If you type ls -la to also show hidden files you should see the hidden .git directory as well</p>
 
-<p>To change the URL of an existing remote, run the command:</p>
+    <p>
+      <img src="images/git-clone-existing-lsla.png">
+    </p>
 
-<pre><code>git remote set-url REMOTE-NAME NEW-REMOTE-URL
-</code></pre>
+    <h2></h2>
 
-<p>REMOTE-NAME - The name of the remote, whose endpoint you want to change
-NEW-REMOTE-URL - The new URL you want to assign to this remote</p>
+    <h2>
+      <a id="remote-endpoints-1" class="anchor" href="#remote-endpoints-1" aria-hidden="true">
+        <span class="octicon octicon-link"></span>
+      </a>Remote Endpoints</h2>
 
-<p><br></p>
+    <p>When cloning an existing repo from github, you will already have an origin remote set for you to start making pull requests.</p>
 
-<p><img src="images/git-clone-existing-remote-seturl.png"></p>
+    <h2></h2>
 
-<h2>
-<a id="setting-up-a-repository-locally" class="anchor" href="#setting-up-a-repository-locally" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setting up a Repository (Locally)</h2>
+    <h2>
+      <a id="check-existing-remotes-1" class="anchor" href="#check-existing-remotes-1" aria-hidden="true">
+        <span class="octicon octicon-link"></span>
+      </a>Check Existing Remotes</h2>
 
-<p>Now we will go through setting up a new git repository from scratch.</p>
+    <p>To see existing remotes set for any git repo type the following command: </p>
 
-<h2>
-<a id="create-empty-directory" class="anchor" href="#create-empty-directory" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create Empty Directory</h2>
+    <p>
+      <img src="images/git-clone-existing-remote.png">
+    </p>
 
-<p>Change directories to your desktop</p>
+    <h2></h2>
 
-<p><img src="images/git-create-local-repo-cd.png"></p>
+    <h2>
+      <a id="remove-a-remote-1" class="anchor" href="#remove-a-remote-1" aria-hidden="true">
+        <span class="octicon octicon-link"></span>
+      </a>Remove a Remote</h2>
 
-<p><code>cd</code> is the command for "changing directories"</p>
+    <p>To remove a remote you can type git remote remove REMOTE-NAME, where REMOTE-NAME is the name of the remote you want to remove. The default remote from a cloned repo will have a name of origin. </p>
 
-<h2>
-<a id="create-a-new-directory" class="anchor" href="#create-a-new-directory" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create a new directory</h2>
+    <p>
+      <img src="images/git-clone-existing-remote-remove.png">
+    </p>
 
-<p>Create a new directory (<code>mkdir</code>) &amp; change (<code>cd</code>) into your directory
-<img src="images/git-create-local-repo-mkdir.png"></p>
+    <h2></h2>
 
-<p>commands:
-<code>cd</code> "change directory"
-<code>mkdir</code> "make directory"</p>
+    <h2>
+      <a id="add-a-remote-1" class="anchor" href="#add-a-remote-1" aria-hidden="true">
+        <span class="octicon octicon-link"></span>
+      </a>Add a Remote</h2>
 
-<p><strong>New to the command line?</strong> <br> Checkout this great <a href="http://cli.learncodethehardway.org/book/">command-line crash course <i class="fa fa-rocket"></i></a> on getting started!</p>
+    <p>To add a remote you can run the command:</p>
 
-<h2>
-<a id="git-init" class="anchor" href="#git-init" aria-hidden="true"><span class="octicon octicon-link"></span></a>Git Init</h2>
+    <pre>
+      <code>git remote add REMOTE-NAME REMOTE-URL,
+      </code>
+    </pre>
 
-<p>Now that we are inside the directory, we can initialize git within this directory using the git init command</p>
+    <p>where REMOTE-NAME is the name of the remote you would like to add &amp; REMOTE-URL is the endpoint that the remote will point to on GitHub. This could be origin, github, heroku, aws, docker, openstack, etc.</p>
 
-<p><br></p>
+    <p>
+      <img src="images/git-clone-existing-remote-add.png">
+    </p>
 
-<p><img src="images/git-create-local-repo-init.png"></p>
+    <h2></h2>
 
-<h2>
-<a id="about-git-init" class="anchor" href="#about-git-init" aria-hidden="true"><span class="octicon octicon-link"></span></a>About git init</h2>
+    <h2>
+      <a id="change-a-remote-1" class="anchor" href="#change-a-remote-1" aria-hidden="true">
+        <span class="octicon octicon-link"></span>
+      </a>Change a Remote</h2>
 
-<p>The git init command adds a hidden ".git" folder that will track all the file changes, history, etc.  You will not need to make any changes directly to this folder.  </p>
+    <p>To change the URL of an existing remote, run the command:</p>
 
-<p>Instead, git provides you access to different configurations through their command-line tools.</p>
+    <pre>
+      <code>git remote set-url REMOTE-NAME NEW-REMOTE-URL
+      </code>
+    </pre>
 
-<p><a href="../github-git-cheat-sheet.pdf"><i class="fa fa-github"></i> git command-line cheat sheet <i></i></a></p>
+    <p>REMOTE-NAME - The name of the remote, whose endpoint you want to change NEW-REMOTE-URL - The new URL you want to assign to this remote</p>
 
-<p>Although we don't need to go into the .git folder, we should check to make sure that its there &amp; that git has been properly initialized.</p>
+    <p>
+      <br>
+    </p>
 
-<p>To check that you have properly initialized git for this directory, type in the command ls -la:</p>
+    <p>
+      <img src="images/git-clone-existing-remote-seturl.png">
+    </p>
 
-<p><img src="images/git-create-local-repo-lsla.png"></p>
+    <h2></h2>
 
-<p>If we only type in ls, we won't be able to see the .git subdirectory since it is hidden from search by default  </p>
+    <h2>
+      <a id="setting-up-a-repository-locally-1" class="anchor" href="#setting-up-a-repository-locally-1" aria-hidden="true">
+        <span class="octicon octicon-link"></span>
+      </a>Setting up a Repository (Locally)</h2>
 
-<p><img src="images/git-create-local-repo-ls.png"></p>
+    <p>Now we will go through setting up a new git repository from scratch.</p>
 
-<blockquote>
-<code>ls</code> is the command for "list" all files.  If we add <strong>-al</strong>, it will "list" "all" file in the current directory (+ hidden)</blockquote>
+    <h2></h2>
 
-<h1>
-<a id="github" class="anchor" href="#github" aria-hidden="true"><span class="octicon octicon-link"></span></a>GitHub</h1>
+    <h2>
+      <a id="create-empty-directory-1" class="anchor" href="#create-empty-directory-1" aria-hidden="true">
+        <span class="octicon octicon-link"></span>
+      </a>Create Empty Directory</h2>
 
-<p>In it's simplest form, GitHub is a website that allows you to upload a copy of your local Git repository</p>
+    <p>Change directories to your desktop</p>
 
-<h1>
-<a id="githubs-origin" class="anchor" href="#githubs-origin" aria-hidden="true"><span class="octicon octicon-link"></span></a>GitHub's origin</h1>
+    <p>
+      <img src="images/git-create-local-repo-cd.png">
+    </p>
 
-<p>GitHub was originally created as a way to make it easier for developers to contribute to open source projects</p>
+    <p>CD is the command for "changing directories"</p>
 
-<h3>
-<a id="not-just-for-open-source" class="anchor" href="#not-just-for-open-source" aria-hidden="true"><span class="octicon octicon-link"></span></a>Not just for open-source</h3>
+    <h2>
+      <a id="create-a-new-directory-1" class="anchor" href="#create-a-new-directory-1" aria-hidden="true">
+        <span class="octicon octicon-link"></span>
+      </a>Create a new directory</h2>
 
-<p>In addition to open-source projects, GitHub is quickly becoming the default platform for software development</p>
+    <p>Create a new directory (mkdir) &amp; change (cd) into your directory
+      <img src="images/git-create-local-repo-mkdir.png">
+    </p>
 
-<h3>
-<a id="source-code-management" class="anchor" href="#source-code-management" aria-hidden="true"><span class="octicon octicon-link"></span></a>Source Code Management+</h3>
+    <p>commands:
+      <br> cd "change directory"
+      <br> mkdir - "make directory"</p>
 
-<p>GitHub is more than just a source code management tool.  </p>
+    <blockquote>New to the command line?
+      <br> Checkout this great <a href="http://cli.learncodethehardway.org/book/">crash course</a> on getting started!</blockquote>
 
-<p>GitHub provides many additional tools for specifying, discussing, &amp; reviewing software.  </p>
+    <p>note: This course goes through the commands for navigating in &amp; out of directories, creating new files, deleting files, etc.</p>
 
-<hr>
+    <h2>
+      <a id="git-init-1" class="anchor" href="#git-init-1" aria-hidden="true">
+        <span class="octicon octicon-link"></span>
+      </a>Git Init</h2>
 
-<h1>
-<a id="who-uses-github" class="anchor" href="#who-uses-github" aria-hidden="true"><span class="octicon octicon-link"></span></a>Who Uses GitHub?</h1>
+    <p>Now that we are inside the directory, we can initialize git within this directory using the git init command</p>
 
-<p>GitHub is used by software developers all over the world, but is also utilized by many others as well</p>
+    <p>
+      <br>
+    </p>
 
-<h3>
-<a id="github-audience" class="anchor" href="#github-audience" aria-hidden="true"><span class="octicon octicon-link"></span></a>GitHub Audience</h3>
+    <p>
+      <img src="images/git-create-local-repo-init.png">
+    </p>
 
-<ul>
-<li>Business Stakeholders</li>
-<li>Product or Project Managers</li>
-<li>Designers</li>
-<li>Copywriters</li>
-<li>Lawyers</li>
-<li>Team Members</li>
-<li>Developers</li>
-</ul>
+    <h2>
+      <a id="about-git-init-1" class="anchor" href="#about-git-init-1" aria-hidden="true">
+        <span class="octicon octicon-link"></span>
+      </a>About git init</h2>
 
-<h3>
-<a id="business-stakeholders" class="anchor" href="#business-stakeholders" aria-hidden="true"><span class="octicon octicon-link"></span></a>Business Stakeholders</h3>
+    <p>The git init command adds a hidden ".git" folder that will track all the file changes, history, etc. You will not need to make any changes directly to this folder. </p>
 
-<p>Business stakeholders are able to see how your project is going</p>
+    <p>Instead, git provides you access to different configurations through their command-line tools.</p>
 
-<h3>
-<a id="product-or-project-managers" class="anchor" href="#product-or-project-managers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Product or Project Managers</h3>
+    <p><a href="../github-git-cheat-sheet.pdf">git command-line cheat sheet <i></i></a></p>
 
-<p>Project managers are able to accurately estimate delivery times &amp; budgeting</p>
+    <p>Although we don't need to go into the .git folder, we should check to make sure that its there &amp; that git has been properly initialized.</p>
 
-<h3>
-<a id="designers" class="anchor" href="#designers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Designers</h3>
+    <p>To check that you have properly initialized git for this directory, type in the command ls -la:</p>
 
-<p>Designers are able to deliver mockups, photos, html/css, &amp; other graphical assets</p>
+    <p>
+      <img src="images/git-create-local-repo-lsla.png">
+    </p>
 
-<h3>
-<a id="copywriter" class="anchor" href="#copywriter" aria-hidden="true"><span class="octicon octicon-link"></span></a>Copywriter</h3>
+    <p>If we only type in ls, we won't be able to see the .git subdirectory since it is hidden from search by default </p>
 
-<p>Copywriters are able to contribute marketing copy or other valuable content to an application while still in the development phase</p>
+    <p>
+      <img src="images/git-create-local-repo-ls.png">
+    </p>
 
-<h3>
-<a id="lawyers" class="anchor" href="#lawyers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lawyers</h3>
+    <code>ls</code> is the command for "list" all files. If we add
+    <strong>-al</strong>, it will "list" "all" file in the current directory (+ hidden) -->
 
-<p>Lawyers are able to review the legal implications of any projects &amp; are able to contribute terms and conditions documentation or any software's privacy policy</p>
+  </section>
 
-<h3>
-<a id="team-member" class="anchor" href="#team-member" aria-hidden="true"><span class="octicon octicon-link"></span></a>Team Member</h3>
 
-<p>Any team member who needs to review any code or content, or needs to contribute to a project</p>
+</body>
 
-<h3>
-<a id="developer" class="anchor" href="#developer" aria-hidden="true"><span class="octicon octicon-link"></span></a>Developer</h3>
-
-<p>Developers are able to contribute to projects with team members they sit right next to or with team members located thousands of miles away, anywhere in the world. (anywhere with internet that is!)</p>
-
-<h2>
-<a id="collaboration-around-communication" class="anchor" href="#collaboration-around-communication" aria-hidden="true"><span class="octicon octicon-link"></span></a>Collaboration around communication</h2>
-
-<p>GitHub's web interface allows you to utilize the following features:</p>
-
-<ul>
-<li>Fork repos</li>
-<li>Clone repos</li>
-<li>Open pull requests</li>
-<li>issues</li>
-<li>wikis</li>
-</ul>
-
-<h1>
-<a id="why-use-github" class="anchor" href="#why-use-github" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why use GitHub?</h1>
-
-<p>GitHub allows you to:</p>
-
-<ul>
-<li>Document requirements</li>
-<li>Collaborate on independent history streams</li>
-<li>Review work in progress</li>
-<li>Track team progress</li>
-</ul>
-
-<p>Note:
-1. Using issues, you can either document bugs or specify new features that you'd like to have your team develop.
-2. Using branches and pull requests, you can collaborate on different branches or features.
-3. By looking at a list of pull requests, you can see all of the different features that are currently being worked on, and by clicking any given pull request, you can see the latest changes as well as all of the discussions about the changes.
-4. Skimming the pulse or looking through the commit history allows you to see what the team has been working on.</p>
-
-<h3>
-<a id="git--github-concepts" class="anchor" href="#git--github-concepts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Git &amp; GitHub Concepts</h3>
-
-<p>Commit
-Whenever you save your changes to one or more files to history in Git, you create a new commit.</p>
-
-<h3>
-<a id="commit-message" class="anchor" href="#commit-message" aria-hidden="true"><span class="octicon octicon-link"></span></a>Commit Message</h3>
-
-<p>Every time you make a commit, you need to supply a message that describes why the change was made.  The commit message is invaluable when trying to understand later why a certain change was implemented.</p>
-
-<p>Example usage: "Make sure to include Susan's comment about the new SEC guidelines in the commit message"</p>
-
-<h3>
-<a id="branch" class="anchor" href="#branch" aria-hidden="true"><span class="octicon octicon-link"></span></a>Branch</h3>
-
-<p>An independent series of commits off to one side that you can use to try out an experiment or create a new feature.<br>
-Example usage: "Let's create a branch to implement the new search functionality"</p>
-
-<h3>
-<a id="master-branch-master" class="anchor" href="#master-branch-master" aria-hidden="true"><span class="octicon octicon-link"></span></a>Master branch (master)</h3>
-
-<p>Whenever you create a new Git project, there is a default branch created that is called master.  This is the branch that your work should end up on eventually once it's ready to push to production.</p>
-
-<p>Example usage: "Remember never to commit directly to master"</p>
-
-<h3>
-<a id="feature-or-topic-branch" class="anchor" href="#feature-or-topic-branch" aria-hidden="true"><span class="octicon octicon-link"></span></a>Feature (or topic) branch</h3>
-
-<p>Whenever you're building a new piece of functionality, you'll create a branch to work on it.  That's called a feature branch.  </p>
-
-<p>Example usage: "We've got way too many feature branches.  Let's focus on getting one or two of these finished and into production"</p>
-
-<h3>
-<a id="release-branch" class="anchor" href="#release-branch" aria-hidden="true"><span class="octicon octicon-link"></span></a>Release branch</h3>
-
-<p>If you have a manual QA process or have to support old versions of your software for your customers, you might need a release branch as a place to make necessary fixes or updates.  There is no technical difference between a feature or release branch, but the distinction is useful when talking about a project with your team.  </p>
-
-<p>Example usage: "We've got to fix the security bug on all of our supported release branches"</p>
-
-<h3>
-<a id="merge" class="anchor" href="#merge" aria-hidden="true"><span class="octicon octicon-link"></span></a>Merge</h3>
-
-<p>This is a way to take completed work from one branch and incorporate it into another branch.  Most commonly you'll merge a feature branch into the master branch.  </p>
-
-<p>Example usage: "Great job on the 'my account' feature.  Could you merge it into master so we can push it to production?"</p>
-
-<h3>
-<a id="tag" class="anchor" href="#tag" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tag</h3>
-
-<p>A reference to a specific historic commit.  Most often used to document production releases so you know exactly which versions of the code went into production and when.</p>
-
-<p>Example usage: "Let's tag this release and push it into production"</p>
-
-<h3>
-<a id="check-out" class="anchor" href="#check-out" aria-hidden="true"><span class="octicon octicon-link"></span></a>Check out</h3>
-
-<p>To go to a different version of the project's history to see the files as of that point in time.  Most commonly you'll check out a branch to see all of the work that has been done on it, but any commit can be checked out.  </p>
-
-<p>Example usage: "could you check out the last release tag?"</p>
-
-<h3>
-<a id="pull-request" class="anchor" href="#pull-request" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pull request</h3>
-
-<p>Originally, a pull request was used to request that someone else review the work you completed on a branch and then merge it into master.  Now, pull requests are often used earlier in the process to start a discussion about a possible feature.</p>
-
-<p>Example usage: "Go create a pull request for the new voting feature so we can see what the rest of the team thinks about it"</p>
-
-<h3>
-<a id="issue" class="anchor" href="#issue" aria-hidden="true"><span class="octicon octicon-link"></span></a>Issue</h3>
-
-<p>GitHub has a feature called issues that can be used to discuss features, track bugs, or both.</p>
-
-<p>Example usage: "You're right, the login doesn't work on an iPhone.  Could you create an issue on GitHub documenting the steps to replacing the bug?"</p>
-
-<h3>
-<a id="wiki" class="anchor" href="#wiki" aria-hidden="true"><span class="octicon octicon-link"></span></a>Wiki</h3>
-
-<p>Originally developed by Ward Cunningham, wikis are a lightweight way of creating web pages with simple links between them.  GitHub projects often use wikis for documentation.  </p>
-
-<p>Example usage: "Could you add a page to the wiki to explain how to configure the project to run on multiple servers?"</p>
-
-<h3>
-<a id="clone" class="anchor" href="#clone" aria-hidden="true"><span class="octicon octicon-link"></span></a>Clone</h3>
-
-<p>Often you'll want to download a copy of a project from GitHub so you can work on it locally.  The process of copying the repository to your computer is called cloning.  </p>
-
-<p>Example usage: "Could you clone the repo, fix the bug, and then push the fix back up to GitHub later tonight?"</p>
-
-<h3>
-<a id="fork" class="anchor" href="#fork" aria-hidden="true"><span class="octicon octicon-link"></span></a>Fork</h3>
-
-<p>Sometimes you don't have the necessary permission to make changes directly to a project.  Perhaps it's an open source project written by people you don't know or it's a project written by another group at your company that you don't work with much.  If you want to submit changes to such a project, first you need to make a copy of the project under your user account on GitHub.  That process is called forking the repository.  You can then clone it, make changes, and submit them back to the original project using a pull request.  </p>
-
-<p>Example usage: "I'd love to see how you'd rewrite the home page marketing copy.  Fork the repo and submit a pull request with your proposed changes."</p>
-
-<h3>
-<a id="pull-requests-best-practices" class="anchor" href="#pull-requests-best-practices" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pull Requests Best Practices</h3>
-
-<h3>
-<a id="create-pull-requests-for-everything" class="anchor" href="#create-pull-requests-for-everything" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create pull requests for everything</h3>
-
-<p>note:
-Anytime you want to fix a bug or add a new feature, make sure to do it on a branch and then create a pull request to get input before merging your work into master</p>
-
-<h3>
-<a id="write-descriptive-titles" class="anchor" href="#write-descriptive-titles" aria-hidden="true"><span class="octicon octicon-link"></span></a>Write descriptive titles</h3>
-
-<p>note:
-Other team members will be looking at the pull requests page to get a sense of what's going on.  The title should give them a good idea of what you're working on.</p>
-
-<h3>
-<a id="take-time-to-provide-feedback-through-comments" class="anchor" href="#take-time-to-provide-feedback-through-comments" aria-hidden="true"><span class="octicon octicon-link"></span></a>Take time to provide feedback through comments</h3>
-
-<p>note:
-Even if you're not <a href="https://github.com/blog/821" class="user-mention">@mentioned</a>.  This will give you a good sense of whats going on with the project and will improve the overall quality of the work.</p>
-
-<h2></h2>
-
-<h3>
-<a id="mention-key-people-that-should-join-the-conversation" class="anchor" href="#mention-key-people-that-should-join-the-conversation" aria-hidden="true"><span class="octicon octicon-link"></span></a><a href="https://github.com/blog/821" class="user-mention">@mention</a> key people that should join the conversation</h3>
-
-<p>note:
-If you want feedback from marketing, legal, and the operations team, <a href="https://github.com/blog/821" class="user-mention">@mention</a> necessary users to ensure they see the pull request and make it more likely that you get feedback</p>
-
-<h2></h2>
-
-<h3>
-<a id="run-your-tests" class="anchor" href="#run-your-tests" aria-hidden="true"><span class="octicon octicon-link"></span></a>Run your tests</h3>
-
-<p>note:
-Make sure that at least one developer downloads the latest changes from a pull request, checks out the appropriate branch, and runs your automated tests.  It isn't enough just to look at the code visually for nontrivial changes.</p>
-
-<h2></h2>
-
-<h3>
-<a id="decide-on-a-clear-policy-around-merging-pull-requests" class="anchor" href="#decide-on-a-clear-policy-around-merging-pull-requests" aria-hidden="true"><span class="octicon octicon-link"></span></a>Decide on a clear policy around merging pull requests</h3>
-
-<p>note:
-Most companies require that one or two people other than the primary author of the pull request review and provide a <img class="emoji" title=":+1:" alt=":+1:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f44d.png" height="20" width="20" align="absmiddle"> before the pull request is merged in</p>
-
-<h2></h2>
-
-<h2>
-<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting Started</h2>
-
-<p>To get started using git we need to:</p>
-
-<pre><code>$ git clone &lt;github.com/SOME-REPO&gt;
-</code></pre>
-
-<p>or</p>
-
-<pre><code>$ mkdir &lt;NEW-REPO-NAME&gt;
-$ cd &lt;NEW-REPO-NAME&gt;
-$ git init
-</code></pre>
-
-<h2>
-<a id="clone-existing-repo-using-ssh-1" class="anchor" href="#clone-existing-repo-using-ssh-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Clone Existing Repo Using SSH</h2>
-
-<p>To clone an existing empty repo from github.com using SSH:</p>
-
-<p>Copy the ssh endpoint
-<img src="images/git-clone-empty-ssh.png"></p>
-
-<pre><code>git clone git@git.target.com:chef-training/git-clone-empty.git
-</code></pre>
-
-<h2></h2>
-
-<h2>
-<a id="clone-existing-repo-using-https-1" class="anchor" href="#clone-existing-repo-using-https-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Clone Existing Repo Using HTTPS</h2>
-
-<p>You can also clone repo's from github using https, but you will need to provide your username &amp; password each time you want to commit changes back up to the github remote.</p>
-
-<p>Copy the https endpoint
-<img src="images/git-clone-empty-https.png"></p>
-
-<pre><code>git clone https://git.target.com/chef-training/git-clone-empty.git
-</code></pre>
-
-<h2></h2>
-
-<h2>
-<a id="clone-existing-repo-2" class="anchor" href="#clone-existing-repo-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Clone Existing Repo</h2>
-
-<p>To clone an existing repo from github.com, go to the main project page &amp; find the clone options located on the right side of the screen</p>
-
-<p><img src="images/git-clone-existing-ssh.png"></p>
-
-<h2></h2>
-
-<h2>
-<a id="clone-existing-repo-3" class="anchor" href="#clone-existing-repo-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Clone Existing Repo</h2>
-
-<p>Copy the ssh url &amp; type the following command into the terminal</p>
-
-<pre><code>git clone git@git.target.com:chef-training/git-clone-existing.git
-</code></pre>
-
-<h2></h2>
-
-<h2>
-<a id="whats-happening-1" class="anchor" href="#whats-happening-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's happening</h2>
-
-<p>Here's whats happening when we read the log messaages from the terminal</p>
-
-<p><img src="images/git-clone-existing-terminal.png"></p>
-
-<p>It should say that it has received 100% of the objects</p>
-
-<h2></h2>
-
-<h2>
-<a id="change-directories-1" class="anchor" href="#change-directories-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Change directories</h2>
-
-<p>Now that we have successfully cloned this repo to our desktop, we still need to change directories (cd) so that we are in the project.</p>
-
-<p><img src="images/git-clone-existing-cd.png"></p>
-
-<h2></h2>
-
-<h2>
-<a id="list-all-the-files-1" class="anchor" href="#list-all-the-files-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>List all the files</h2>
-
-<p>Now when you type ls into the terminal you should see the README.md file &amp; the index.html file</p>
-
-<p><img src="images/git-clone-existing-ls.png"></p>
-
-<p>If you type ls -la to also show hidden files you should see the hidden .git directory as well</p>
-
-<p><img src="images/git-clone-existing-lsla.png"></p>
-
-<h2></h2>
-
-<h2>
-<a id="remote-endpoints-1" class="anchor" href="#remote-endpoints-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Remote Endpoints</h2>
-
-<p>When cloning an existing repo from github, you will already have an origin remote set for you to start making pull requests.</p>
-
-<h2></h2>
-
-<h2>
-<a id="check-existing-remotes-1" class="anchor" href="#check-existing-remotes-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Check Existing Remotes</h2>
-
-<p>To see existing remotes set for any git repo type the following command:  </p>
-
-<p><img src="images/git-clone-existing-remote.png"></p>
-
-<h2></h2>
-
-<h2>
-<a id="remove-a-remote-1" class="anchor" href="#remove-a-remote-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Remove a Remote</h2>
-
-<p>To remove a remote you can type git remote remove REMOTE-NAME, where REMOTE-NAME is the name of the remote you want to remove.  The default remote from a cloned repo will have a name of origin.  </p>
-
-<p><img src="images/git-clone-existing-remote-remove.png"></p>
-
-<h2></h2>
-
-<h2>
-<a id="add-a-remote-1" class="anchor" href="#add-a-remote-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Add a Remote</h2>
-
-<p>To add a remote you can run the command:</p>
-
-<pre><code>git remote add REMOTE-NAME REMOTE-URL,
-</code></pre>
-
-<p>where REMOTE-NAME is the name of the remote you would like to add &amp; REMOTE-URL is the endpoint that the remote will point to on GitHub.  This could be origin, github, heroku, aws, docker, openstack, etc.</p>
-
-<p><img src="images/git-clone-existing-remote-add.png"></p>
-
-<h2></h2>
-
-<h2>
-<a id="change-a-remote-1" class="anchor" href="#change-a-remote-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Change a Remote</h2>
-
-<p>To change the URL of an existing remote, run the command:</p>
-
-<pre><code>git remote set-url REMOTE-NAME NEW-REMOTE-URL
-</code></pre>
-
-<p>REMOTE-NAME - The name of the remote, whose endpoint you want to change
-NEW-REMOTE-URL - The new URL you want to assign to this remote</p>
-
-<p><br></p>
-
-<p><img src="images/git-clone-existing-remote-seturl.png"></p>
-
-<h2></h2>
-
-<h2>
-<a id="setting-up-a-repository-locally-1" class="anchor" href="#setting-up-a-repository-locally-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setting up a Repository (Locally)</h2>
-
-<p>Now we will go through setting up a new git repository from scratch.</p>
-
-<h2></h2>
-
-<h2>
-<a id="create-empty-directory-1" class="anchor" href="#create-empty-directory-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create Empty Directory</h2>
-
-<p>Change directories to your desktop</p>
-
-<p><img src="images/git-create-local-repo-cd.png"></p>
-
-<p>CD is the command for "changing directories"</p>
-
-<h2>
-<a id="create-a-new-directory-1" class="anchor" href="#create-a-new-directory-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create a new directory</h2>
-
-<p>Create a new directory (mkdir) &amp; change (cd) into your directory
-<img src="images/git-create-local-repo-mkdir.png"></p>
-
-<p>commands:<br>
-cd "change directory" <br>
-mkdir - "make directory"</p>
-
-<blockquote>New to the command line? <br> Checkout this great <a href="http://cli.learncodethehardway.org/book/">crash course</a> on getting started!</blockquote>
-
-<p>note: This course goes through the commands for navigating in &amp; out of directories, creating new files, deleting files, etc.</p>
-
-<h2>
-<a id="git-init-1" class="anchor" href="#git-init-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Git Init</h2>
-
-<p>Now that we are inside the directory, we can initialize git within this directory using the git init command</p>
-
-<p><br></p>
-
-<p><img src="images/git-create-local-repo-init.png"></p>
-
-<h2>
-<a id="about-git-init-1" class="anchor" href="#about-git-init-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>About git init</h2>
-
-<p>The git init command adds a hidden ".git" folder that will track all the file changes, history, etc.  You will not need to make any changes directly to this folder.  </p>
-
-<p>Instead, git provides you access to different configurations through their command-line tools.</p>
-
-<p><a href="../github-git-cheat-sheet.pdf">git command-line cheat sheet <i></i></a></p>
-
-<p>Although we don't need to go into the .git folder, we should check to make sure that its there &amp; that git has been properly initialized.</p>
-
-<p>To check that you have properly initialized git for this directory, type in the command ls -la:</p>
-
-<p><img src="images/git-create-local-repo-lsla.png"></p>
-
-<p>If we only type in ls, we won't be able to see the .git subdirectory since it is hidden from search by default  </p>
-
-<p><img src="images/git-create-local-repo-ls.png"></p>
-
-<code>ls</code> is the command for "list" all files.  If we add <strong>-al</strong>, it will "list" "all" file in the current directory (+ hidden)
-
-    </section>
-
-
-  </body>
 </html>
