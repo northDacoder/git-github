@@ -19,6 +19,27 @@
 
 
   <style type="text/css">
+    body {
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+    .page-header {
+        margin-top: -5px;
+    }
+
+    h1.project-name {
+        margin-top: 20px;
+        font-weight: 100;
+        font-size: 40px;
+        margin-bottom: -20px;
+    }
+
+    h2.project-tagline {
+        font-weight: 100;
+        font-size: 26px;
+        color: rgba(255,255,255,.5);
+    }
     p {
         font-family: 'Open Sans', sans-serif;
     }
@@ -72,16 +93,17 @@
     }
 
     .panel-body { padding: 60px 80px;}
+
   </style>
 </head>
 
 <body>
 
 <section class="page-header">
-    <img src="images/target-white.png" style="width: 250px; height: auto;">
+    <img src="images/target-white.png" style="width: 250px; height: auto; opacity: .6;">
     <h1 class="project-name">Git + <i class="fa fa-github"></i> GitHub</h1>
     <h2 class="project-tagline">Chef & Automation Toolchain</h2>
-    <a href="https://github.com/northdacoder/git-github" class="btn"><i class="fa fa-code-fork"></i> Fork on GitHub</a>
+    <a href="https://git.target.com/gist/JohnRyan/d4cad8c2b1416b0a7a39" class="btn"><i class="fa fa-check"></i> Git Checklist</a>
     <a href="github-git-cheat-sheet.pdf" class="btn"><i class="fa fa-github-alt"></i> GitHub cheat sheet </a>
     <a href="http://cli.learncodethehardway.org/book/" class="btn"><i class="fa fa-laptop"></i> command-line crash course</a>
 </section>
@@ -569,8 +591,7 @@ $ git config --global core.autocrlf</code>
                                         <li>4. Run the command in your terminal:</li>
                                     </ul>
 
-                            <pre><code>git clone git@git.target.com:chef-training/git-clone-empty.git</code>
-                            </pre>
+                            <pre><code>git clone git@git.target.com:chef-training/git-clone-empty.git</code></pre>
 
                         </div>
                     </div>
